@@ -17,14 +17,14 @@ This project looks at extracting cone opsin sequences from fishes belonging to t
 # 1. Install Software
 All software used in the pipeline were implemented in the Niagara cluster from Compute Canada.
 
-1. [__FastQC__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)(version 0.11.8)
-2. [__Trimmomatic__](http://www.usadellab.org/cms/?page=trimmomatic)(version 0.38)
-3. [__BWA__](http://bio-bwa.sourceforge.net/)(version 0.7.17)
+1. [__FastQC__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (version 0.11.8)
+2. [__Trimmomatic__](http://www.usadellab.org/cms/?page=trimmomatic) (version 0.38)
+3. [__BWA__](http://bio-bwa.sourceforge.net/) (version 0.7.17)
 4. [__SAMtools__](http://www.htslib.org/) (version 1.9)
-5. [__IQTree__](http://www.iqtree.org/)(version 1.6.0)
-6. [__MrBayes__](http://nbisweden.github.io/MrBayes/)(version 3.2.6)
-7. [__BEAST__](https://beast.community/)(version 1.8.4)
-8. [__PAML__](http://abacus.gene.ucl.ac.uk/software/paml.html)(version 4)
+5. [__IQTree__](http://www.iqtree.org/) (version 1.6.0)
+6. [__MrBayes__](http://nbisweden.github.io/MrBayes/) (version 3.2.6)
+7. [__BEAST__](https://beast.community/) (version 1.8.4)
+8. [__PAML__](http://abacus.gene.ucl.ac.uk/software/paml.html) (version 4)
 
 ## 1.1. Additional Software
 This includes software that was used but not installed onto a cluster, rather, they are available online.
