@@ -5,13 +5,12 @@ This project looks at extracting cone opsin sequences from fishes belonging to t
 This project was conducted at the [University of Toronto Scarborough](https://www.utsc.utoronto.ca/home/) in the [Lovejoy Lab](http://www.utsc.utoronto.ca/~lovejoy/).
 
 Authors:
-
-Katherine D. Chau (me)
-[Frances E. Hauser](https://fehauser.wordpress.com/)
-[Jacob M. Daane](https://www.daanelab.org/)
-[Matthew P. Harris](http://www.fishbonelab.org/harris/Home.html)
-[Belinda S. W. Chang](https://chang.eeb.utoronto.ca/)
-[Nathan R. Lovejoy](http://www.utsc.utoronto.ca/~lovejoy/)
+* Katherine D. Chau (me)
+* [Frances E. Hauser](https://fehauser.wordpress.com/)
+* [Jacob M. Daane](https://www.daanelab.org/)
+* [Matthew P. Harris](http://www.fishbonelab.org/harris/Home.html)
+* [Belinda S. W. Chang](https://chang.eeb.utoronto.ca/)
+* [Nathan R. Lovejoy](http://www.utsc.utoronto.ca/~lovejoy/)
 
 
 # Table of Contents
