@@ -70,7 +70,7 @@ Medaka are beloniforms that have their whole genome sequenced and can be used as
 Medaka have 8 cone opsin sequences readily available on Genbank:
 
 | Opsin Type | Opsin ID | Genbank ID |
-| ------------- | ------------- |
+| --- | --- |
 | red opsin  | LWSA | AB223051 |
 | red opsin  | LWSA | AB223051 |
 | red opsin  | LWSA | AB223051 |
