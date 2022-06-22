@@ -1,4 +1,4 @@
-# Opsin Evolution in Beloniformes Fishes
+# Multiple Ecological Axes Drive Cone Opsin Evolution in Beloniformes
 
 This project looks at extracting cone opsin sequences from fishes belonging to the order Beloniformes, and testing for changes in selection patterns within the cone opsins. This project uses bioinformatics and PAML to analyze selection patterns and the evolution of vision in fishes that transitioned from marine to freshwater habitats, as well as transitioned from a generalized diet to more specialized diets.
 
@@ -45,6 +45,8 @@ A fast, unconstrained Bayesian approximation for inferring selection ([FUBAR](ht
 # 2. Quality Control
 
 Whole exome sequence data for 36 beloniform species was extracted by [Dr. Jake Daane](https://www.daanelab.org/) and [Dr. Matthew Harris Laboratory](http://www.fishbonelab.org/harris/Home.html). This project is in collaboration with the Harris Lab from Harvard Medical School.
+
+For extraction method of exome sequences, see this [paper](https://www.cell.com/current-biology/fulltext/S0960-9822(21)01190-8?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982221011908%3Fshowall%3Dtrue).
 
 # 3. Read Mapping
 ## 3.1. Round 1
