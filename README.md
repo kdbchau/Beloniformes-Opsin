@@ -4,7 +4,8 @@ This project looks at extracting cone opsin sequences from fishes belonging to t
 
 This project was conducted at the [University of Toronto Scarborough](https://www.utsc.utoronto.ca/home/) in the [Lovejoy Lab](http://www.utsc.utoronto.ca/~lovejoy/).
 
-Authours:
+Authors:
+
 Katherine D. Chau (me)
 [Frances E. Hauser](https://fehauser.wordpress.com/)
 [Jacob M. Daane](https://www.daanelab.org/)
