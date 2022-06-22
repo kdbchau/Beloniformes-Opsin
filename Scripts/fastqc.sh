@@ -5,7 +5,7 @@
 
 module load fastqc
 
-# I saved the names of the raw fastq files in a textfile as a list
+# I saved the names of the raw fastq files in a textfile called fastq_files.txt as a list
 # so in case some files did not complete I could just edit the textfile 
 # and work on those files instead of accidentally rerunning fastqc on all files in the directory
 
