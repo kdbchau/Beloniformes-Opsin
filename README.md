@@ -60,8 +60,22 @@ module load trimmomatic
 for file in *fastq; do java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.38.jar SE -phred33 $file "${file%%_*}_trimmed.fastq" ILLUMINACLIP:TruSeq3-SE:2:30:10 SLIDINGWINDOW:4:20 HEADCROP:5
 ```
 
+Then rerun FastQC on the trimmed files to ensure adapters were removed and sequences look good.
 
 # 3. Read Mapping
+The trimmed beloniform exome sequences were then used for mapping against _Oryzias latipes_ (medaka) sequences to extract opsins.
+
+Medaka are beloniforms that have their whole genome sequenced and can be used as a good reference for protein coding sequences.
+
+Medaka have 8 cone opsin sequences readily available on Genbank:
+
+| Opsin Type  | Opsin ID |  Genbank ID |
+| ------------- | ------------- |
+| red opsin  | LWSA | AB223051 |
+| red opsin  | LWSA | AB223051 |
+| red opsin  | LWSA | AB223051 |
+
+
 ## 3.1. Round 1
 ## 3.2. Round 2+
 # 4. Cleaning Multiple Sequence Alignments
