@@ -26,12 +26,12 @@ Authors:
 
 
 # 1. Install Software
-All software used in the pipeline were implemented in the Niagara cluster from Compute Canada.
+Software with a * next to the name were already available in the Niagara cluster from Compute Canada.
 
-1. [__FastQC__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (version 0.11.8)
-2. [__Trimmomatic__](http://www.usadellab.org/cms/?page=trimmomatic) (version 0.38)
-3. [__BWA__](http://bio-bwa.sourceforge.net/) (version 0.7.17)
-4. [__SAMtools__](http://www.htslib.org/) (version 1.9)
+1. [__FastQC*__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (version 0.11.8)
+2. [__Trimmomatic*__](http://www.usadellab.org/cms/?page=trimmomatic) (version 0.38)
+3. [__BWA*__](http://bio-bwa.sourceforge.net/) (version 0.7.17)
+4. [__SAMtools*__](http://www.htslib.org/) (version 1.9)
 5. [__IQTree__](http://www.iqtree.org/) (version 1.6.0)
 6. [__MrBayes__](http://nbisweden.github.io/MrBayes/) (version 3.2.6)
 7. [__BEAST__](https://beast.community/) (version 1.8.4)
@@ -47,6 +47,13 @@ A fast, unconstrained Bayesian approximation for inferring selection ([FUBAR](ht
 Whole exome sequence data for 36 beloniform species was extracted by [Dr. Jake Daane](https://www.daanelab.org/) and [Dr. Matthew Harris Laboratory](http://www.fishbonelab.org/harris/Home.html). This project is in collaboration with the Harris Lab from Harvard Medical School.
 
 For tissue and DNA extraction method of exome sequences, see this [paper](https://www.cell.com/current-biology/fulltext/S0960-9822(21)01190-8?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982221011908%3Fshowall%3Dtrue) and the _Targeted sequence capture design_ and _Specimen tissue collection and sequencing library preparation_ section in this [paper](https://www.biorxiv.org/content/10.1101/2021.03.05.434157v1.full).
+
+FastQC was run on each fastq file for each beloniform species using default settings.
+
+```
+mkdir fastqc_raw
+module load fastqc
+```
 
 # 3. Read Mapping
 ## 3.1. Round 1
