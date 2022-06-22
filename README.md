@@ -71,9 +71,9 @@ Medaka have 8 cone opsin sequences readily available on Genbank:
 
 | Opsin Type | Opsin ID | Genbank ID |
 | --- | --- | --- |
-| red opsin 1 | LWSA | AB223051 |
-| red opsin 2 | LWSB | AB223052 |
-| green opsin 1 | RH2A | AB223053 |
+| red opsin 1 | LWSA | [AB223051](https://www.ncbi.nlm.nih.gov/nuccore/AB223051) |
+| red opsin 2 | LWSB | [AB223052] |
+| green opsin 1 | RH2A | [AB223053] |
 | green opsin 2 | RH2B | AB223054 |
 | green opsin 3 | RH2C | AB223055 |
 | blue opsin 1 | SWS2A | AB223056 |
