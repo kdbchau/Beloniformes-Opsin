@@ -2,7 +2,7 @@
 
 This project looks at extracting cone opsin sequences from fishes belonging to the order Beloniformes, and testing for changes in selection patterns within the cone opsins. This project uses bioinformatics and PAML to analyze selection patterns and the evolution of vision in fishes that transitioned from marine to freshwater habitats, as well as transitioned from a generalized diet to more specialized diets.
 
-This project was conducted in the Lovejoy Lab, supervised by [Dr. Nathan Lovejoy](http://www.utsc.utoronto.ca/~lovejoy/), conjoined with [Dr. Belinda Chang] [Chang Lab](https://chang.eeb.utoronto.ca/), [Dr. Frances Hauser](https://fehauser.wordpress.com/), and in collaboration with [Dr. Jake Daane](https://www.daanelab.org/), and [Dr. Matthew Harris Laboratory](http://www.fishbonelab.org/harris/Home.html).
+This project was conducted in the Lovejoy Lab, supervised by [Dr. Nathan Lovejoy](http://www.utsc.utoronto.ca/~lovejoy/), in collaboration with [Dr. Belinda Chang](https://chang.eeb.utoronto.ca/), [Dr. Frances Hauser](https://fehauser.wordpress.com/), [Dr. Jake Daane](https://www.daanelab.org/), and [Dr. Matthew Harris Laboratory](http://www.fishbonelab.org/harris/Home.html).
 
 # Table of Contents
 1. [Install software](#1-install-software)
