@@ -29,10 +29,12 @@ All software used in the pipeline were implemented in the Niagara cluster from C
 ## 1.1. Additional Software
 This includes software that was used but not installed onto a cluster, rather, they are available online.
 
-
 A fast, unconstrained Bayesian approximation for inferring selection ([FUBAR](http://www.datamonkey.org/fubar)) was conducted using the [Datamonkey Server](http://www.datamonkey.org/).
 
 # 2. Quality Control
+
+Whole exome sequence data for 36 beloniform species was extracted by [Dr. Jake Daane](https://www.daanelab.org/) and [Dr. Matthew Harris Laboratory](http://www.fishbonelab.org/harris/Home.html). This project is in collaboration with the Harris Lab from Harvard Medical School.
+
 # 3. Read Mapping
 ## 3.1. Round 1
 ## 3.2. Round 2+
