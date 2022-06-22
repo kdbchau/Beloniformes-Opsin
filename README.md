@@ -50,6 +50,16 @@ For tissue and DNA extraction method of exome sequences, see this [paper](https:
 
 FastQC was run on each fastq file for each beloniform species using default settings. I used this [script](https://github.com/kdbchau/Beloniformes/tree/main/Scripts/fastqc.sh)
 
+Next, Trimmomatic was run on each file separately.
+
+```
+module load java
+module load StdEnv/2020
+module load trimmomatic
+
+for file in *fastq; do java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.38.jar SE -phred33 $file "${file%%_*}_trimmed.fastq" ILLUMINACLIP:TruSeq3-SE:2:30:10 SLIDINGWINDOW:4:20 HEADCROP:5
+```
+
 
 # 3. Read Mapping
 ## 3.1. Round 1
