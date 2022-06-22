@@ -30,7 +30,8 @@ All software used in the pipeline were implemented in the Niagara cluster from C
 This includes software that was used but not installed onto a cluster, rather, they are available online.
 
 
-A fast, unconstrained Bayesian approximation for inferring selection was conducted using the Datamonkey Server: [FUBAR](http://www.datamonkey.org/)
+A fast, unconstrained Bayesian approximation for inferring selection ([FUBAR]([http://www.datamonkey.org/](http://www.datamonkey.org/fubar))
+) was conducted using the [Datamonkey Server](http://www.datamonkey.org/).
 
 # 2. Quality Control
 # 3. Read Mapping
