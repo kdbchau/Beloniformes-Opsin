@@ -81,7 +81,6 @@ Medaka have 8 cone opsin sequences readily available on Genbank:
 | ultraviolet opsin | SWS1 | [AB223058](https://www.ncbi.nlm.nih.gov/nuccore/AB223058) |
 
 We will also later integrate the marine medaka (_Oryzias melastigma_) sequences which are available at [Ensembl](https://useast.ensembl.org/index.html) and Genbank. Note: it is called "Indian medaka" on Ensembl.
-
 ### Marine Medaka (_Oryzias melastigma_) Opsins
 | Opsin Type | Opsin ID | Genbank ID |
 | --- | --- | --- |
