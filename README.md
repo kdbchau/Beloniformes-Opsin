@@ -107,7 +107,7 @@ sbatch --job-name="lwsa" mapping.sh lwsa_medaka.fa lwsa_medaka_output
 ```
 The above script will use a python script called [consensus.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/consensus.py) which will then take all the mpileup files generated after the mapping, and create a multiple sequence alignment (MSA) which we can alter edit. See Figure 1.
 
-
+![](https://github.com/kdbchau/Beloniformes/blob/main/Images/Screenshot%202022-06-23%20151643.png)
 
 
 ## 3.2. Round 2+
