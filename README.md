@@ -121,7 +121,7 @@ To identify the next top beloniform, we used the [ideal_species.py](https://gith
 
 ```
 # name is the name of the file you are running without its extension, for example if it was rh2a_medaka_MSA.fa
-name="rh2a_medaka_MSA" && python3 ideal_species.py ${name}.fa > ${name}.txt && cat ${name}.txt | sort -nr -k2 -o ${name}.txt
+name="rh2a_medaka_MSA" && python ideal_species.py ${name}.fa > ${name}.txt && cat ${name}.txt | sort -nr -k2 -o ${name}.txt
 ```
 
 A textfile will be created with the species in the first column, sorted by the number of codons in the second column. Medakas are usually always the first two, followed by the beloniform with the next most complete sequence. Then using that beloniform's sequence, you can then fill in its gaps with either the medaka sequence or a different nucleotide/amino acid from another beloniform. Typically this is the best approach, as refilling in the gaps with medaka bases doesn't pull out more information. Rather, fill it with bases from the seccond most complete beloniform, or in some cases, if a paritcular family (e.g. all the flyingfishes) are missing codons in an area, fill the gaps with their bases to try and pull out more of their sequences in the next round mapping.
@@ -139,8 +139,18 @@ In my study, this is how many round mappings were needed to obtain opsin MSAs th
 | SWS2B | 3 | medaka SWS2B [AB223057](https://www.ncbi.nlm.nih.gov/nuccore/AB223057)|
 | SWS1 | 3 | medaka SWS1 [ENSOMET00000035584.1](https://useast.ensembl.org/Oryzias_melastigma/Transcript/Summary?db=core;g=ENSOMEG00000021044;r=NVQA01000003.1:19506721-19509232;t=ENSOMET00000035584)|
 
+After completing the round mapping, we will notice that some parts of the alignment are more complete during the first round and other parts are more complete during the second part (becuase different starting references can cause this discrepancy). In this case, we shall merge the MSAs to obtain the most complete MSA for each opsin, then conduct further alignment cleaning prior to codeml analysis.
 
+Merging is done with [merge_seqs.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/merge_seqs.py) which will take one MSA, and fill any gaps it comes across with bases if they are present in the second called MSA. Also, sometimes very minor base differences can occur between the MSAs, (like TTT or TTC) - this script will keep the base from the most up-to-date MSA which is called second.
+
+```
+python merge_seqs.py round1_MSA round3_MSA # where the second MSA called is the most up-to-date OR most complete (fewest gaps)
+```
+
+After this, we will have our opsin MSAs to work with. But despite all this read mapping and refining, there are still regions in the MSA that are very gapped or have premature stop codons and need to be removed for effective codeml analysis.
 
 # 4. Cleaning Multiple Sequence Alignments
+
+
 # 5. Phylogeny Reconstruction
 # 6. Ancestral Habitat and Diet Reconstruction
