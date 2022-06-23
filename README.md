@@ -97,13 +97,15 @@ We will also later integrate the marine medaka (_Oryzias melastigma_) sequences 
 
 ## 3.1. Round 1
 
-In the very first round of read mapping, use the protein-coding opsin sequence from freshwater medaka. The mapping script is [here](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/mapping.sh). This was run on the Niagara cluster from ComputeCanada. BWA is used as the mapping software.
+In the very first round of read mapping, use the protein-coding opsin sequence from freshwater medaka. The mapping script is [here](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/mapping.sh). This was run on the Niagara cluster from ComputeCanada. BWA is used as the mapping software. 
+
+However, upon trial and error it was found that because of high sequence similarity in the LWS opsins (see this [paper](https://www.nature.com/articles/s41598-019-39978-6)), and in the RH2 opsins for the medakas, I used zebrafish (_Danio rerio_) LWS and guppy RH2 (_Poecilia reticulata_) opsins in the first round of read mapping.
 
 ```
 # Ran the script as follows on the cluster:
 
 # Sbatch to set up the script on the job queue, then gave it a job name "lwsa", then called the reference sequence (a fasta file with just the freshwater medaka opsin sequence), and an output filename.
-sbatch --job-name="lwsa" mapping.sh lwsa_medaka.fa lwsa_medaka_output
+sbatch --job-name="lwsa" mapping.sh sws2a_medaka.fa sws2a_medaka_output
 ```
 The above script will use a python script called [consensus.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/consensus.py) which will then take all the mpileup files generated after the mapping, and create a multiple sequence alignment (MSA) which we can alter edit.
 
@@ -112,6 +114,30 @@ The above script will use a python script called [consensus.py](https://github.c
 Sometimes, using just freshwater medaka as a reference is not good enough. Because medaka are quite divergent from the rest of the beloniformes, we can use information ffrom the first round mapping to create "makeshift" or "chimeric" reference sequences that should be helpful to fill in more gaps. See the figure below.
 
 ![](https://github.com/kdbchau/Beloniformes/blob/main/Images/Screenshot%202022-06-23%20151643.png)
+
+The second and subsequent rounds use these makeshift sequences that are filled in with nucleotides from the top most complete beloniform (after medaka which would be 100% complete because it is a direct match to itself).
+
+To identify the next top beloniform, we used the [ideal_species.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/ideal_species.py) script. But this might not come out sorted properly so we run it the following way in terminal:
+
+```
+# name is the name of the file you are running without its extension, for example if it was rh2a_medaka_MSA.fa
+name="rh2a_medaka_MSA" && python3 ideal_species.py ${name}.fa > ${name}.txt && cat ${name}.txt | sort -nr -k2 -o ${name}.txt
+```
+
+A textfile will be created with the species in the first column, sorted by the number of codons in the second column. Medakas are usually always the first two, followed by the beloniform with the next most complete sequence. Then using that beloniform's sequence, you can then fill in its gaps with either the medaka sequence or a different nucleotide/amino acid from another beloniform. Typically this is the best approach, as refilling in the gaps with medaka bases doesn't pull out more information. Rather, fill it with bases from the seccond most complete beloniform, or in some cases, if a paritcular family (e.g. all the flyingfishes) are missing codons in an area, fill the gaps with their bases to try and pull out more of their sequences in the next round mapping.
+
+In my study, this is how many round mappings were needed to obtain opsin MSAs that were fairly complete:
+
+| Opsin | # of rounds | Round 1 reference species|
+| --- | --- | --- |
+| LWSA | 3 | zebrafish LWS1 [KT008400.1](https://www.ncbi.nlm.nih.gov/nuccore/KT008400.1)|
+| LWSB | 2 | zebrafish LWS2 [KT008401.1](https://www.ncbi.nlm.nih.gov/nuccore/KT008401.1)|
+| RH2A | 1 | guppy RH2A [ENSPRET00000003992.1 ](https://www.ensembl.org/Poecilia_reticulata/Transcript/Summary?db=core;g=ENSPREG00000002751;r=LG5:3901638-3906113;t=ENSPRET00000003992)|
+| RH2B | 1 | medaka RH2B [AB223054](https://www.ncbi.nlm.nih.gov/nuccore/AB223054)|
+| RH2C | 1 | guppy RH2B/C [ENSPRET00000004125.1](https://www.ensembl.org/Poecilia_reticulata/Transcript/Summary?db=core;g=ENSPREG00000002827;r=LG5:3918624-3921999;t=ENSPRET00000004125)|
+| SWS2A | 3 | medaka SWS2A | [AB223056](https://www.ncbi.nlm.nih.gov/nuccore/AB223056) |
+| SWS2B | 3 | medaka SWS2B | [AB223057](https://www.ncbi.nlm.nih.gov/nuccore/AB223057) |
+| SWS1 | 3 | medaka SWS1 | [ENSOMET00000035584.1](https://useast.ensembl.org/Oryzias_melastigma/Transcript/Summary?db=core;g=ENSOMEG00000021044;r=NVQA01000003.1:19506721-19509232;t=ENSOMET00000035584) |
 
 
 
