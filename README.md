@@ -62,13 +62,13 @@ for file in *fastq; do java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.38.jar SE -phr
 Then rerun FastQC on the trimmed files to ensure adapters were removed and sequences look good.
 
 # 3. Read Mapping
-The trimmed beloniform exome sequences were then used for mapping against _Oryzias latipes_ (medaka) sequences to extract opsins.
+The trimmed beloniform exome sequences were then used for mapping against _Oryzias latipes_ (freshwater medaka) sequences to extract opsins.
 
-Medaka are beloniforms that have their whole genome sequenced and can be used as a good reference for protein coding sequences.
+Freshwater medaka are beloniforms that have their whole genome sequenced and can be used as a good reference for protein coding sequences.
 
-Medaka have 8 cone opsin sequences readily available on [Genbank](https://www.ncbi.nlm.nih.gov/genbank/):
+Freshwater medaka have 8 cone opsin sequences readily available on [Genbank](https://www.ncbi.nlm.nih.gov/genbank/):
 
-### Medaka (_Oryzias latipes_) Opsins
+### Freshwater Medaka (_Oryzias latipes_) Opsins
 | Opsin Type | Opsin ID | Genbank ID |
 | --- | --- | --- |
 | red opsin 1 | LWSA | [AB223051](https://www.ncbi.nlm.nih.gov/nuccore/AB223051) |
@@ -97,9 +97,24 @@ We will also later integrate the marine medaka (_Oryzias melastigma_) sequences 
 
 ## 3.1. Round 1
 
-In the very first round of read mapping, we use the medaka opsin as a reference.
+In the very first round of read mapping, use the protein-coding opsin sequence from freshwater medaka. The mapping script is [here](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/mapping.sh). This was run on the Niagara cluster from ComputeCanada. BWA is used as the mapping software.
+
+```
+# Ran the script as follows on the cluster:
+
+# Sbatch to set up the script on the job queue, then gave it a job name "lwsa", then called the reference sequence (a fasta file with just the freshwater medaka opsin sequence), and an output filename.
+sbatch --job-name="lwsa" mapping.sh lwsa_medaka.fa lwsa_medaka_output
+```
+The above script will use a python script called [consensus.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/consensus.py) which will then take all the mpileup files generated after the mapping, and create a multiple sequence alignment (MSA) which we can alter edit. See Figure 1.
+
+
+
 
 ## 3.2. Round 2+
+Sometimes, using just freshwater medaka as a reference is not good enough. Because medaka are quite divergent from the rest of the beloniformes, we can use information ffrom the first round mapping to create "makeshift" or "chimeric" reference sequences that should be helpful to fill in more gaps.
+
+
+
 # 4. Cleaning Multiple Sequence Alignments
 # 5. Phylogeny Reconstruction
 # 6. Ancestral Habitat and Diet Reconstruction
