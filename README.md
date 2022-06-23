@@ -135,9 +135,9 @@ In my study, this is how many round mappings were needed to obtain opsin MSAs th
 | RH2A | 1 | guppy RH2A [ENSPRET00000003992.1 ](https://www.ensembl.org/Poecilia_reticulata/Transcript/Summary?db=core;g=ENSPREG00000002751;r=LG5:3901638-3906113;t=ENSPRET00000003992)|
 | RH2B | 1 | medaka RH2B [AB223054](https://www.ncbi.nlm.nih.gov/nuccore/AB223054)|
 | RH2C | 1 | guppy RH2B/C [ENSPRET00000004125.1](https://www.ensembl.org/Poecilia_reticulata/Transcript/Summary?db=core;g=ENSPREG00000002827;r=LG5:3918624-3921999;t=ENSPRET00000004125)|
-| SWS2A | 3 | medaka SWS2A | [AB223056](https://www.ncbi.nlm.nih.gov/nuccore/AB223056) |
-| SWS2B | 3 | medaka SWS2B | [AB223057](https://www.ncbi.nlm.nih.gov/nuccore/AB223057) |
-| SWS1 | 3 | medaka SWS1 | [ENSOMET00000035584.1](https://useast.ensembl.org/Oryzias_melastigma/Transcript/Summary?db=core;g=ENSOMEG00000021044;r=NVQA01000003.1:19506721-19509232;t=ENSOMET00000035584) |
+| SWS2A | 3 | medaka SWS2A [AB223056](https://www.ncbi.nlm.nih.gov/nuccore/AB223056)|
+| SWS2B | 3 | medaka SWS2B [AB223057](https://www.ncbi.nlm.nih.gov/nuccore/AB223057)|
+| SWS1 | 3 | medaka SWS1 [ENSOMET00000035584.1](https://useast.ensembl.org/Oryzias_melastigma/Transcript/Summary?db=core;g=ENSOMEG00000021044;r=NVQA01000003.1:19506721-19509232;t=ENSOMET00000035584)|
 
 
 
