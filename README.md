@@ -68,6 +68,7 @@ Medaka are beloniforms that have their whole genome sequenced and can be used as
 
 Medaka have 8 cone opsin sequences readily available on Genbank:
 
+### Medaka Opsins
 | Opsin Type | Opsin ID | Genbank ID |
 | --- | --- | --- |
 | red opsin 1 | LWSA | [AB223051](https://www.ncbi.nlm.nih.gov/nuccore/AB223051) |
@@ -79,8 +80,23 @@ Medaka have 8 cone opsin sequences readily available on Genbank:
 | blue opsin 2 | SWS2B | [AB223057](https://www.ncbi.nlm.nih.gov/nuccore/AB223057) |
 | ultraviolet opsin | SWS1 | [AB223058](https://www.ncbi.nlm.nih.gov/nuccore/AB223058) |
 
+We will also later integrate the marine medaka (_Oryzias melastigma_) sequences which are available at [Ensembl](https://useast.ensembl.org/index.html).
+
+| Opsin Type | Opsin ID | Genbank ID |
+| --- | --- | --- |
+| red opsin 1 | LWSA | [AB223051](https://www.ncbi.nlm.nih.gov/nuccore/AB223051) |
+| red opsin 2 | LWSB | [AB223052](https://www.ncbi.nlm.nih.gov/nuccore/AB223052) |
+| green opsin 1 | RH2A | [AB223053](https://www.ncbi.nlm.nih.gov/nuccore/AB223053) |
+| green opsin 2 | RH2B | [AB223054](https://www.ncbi.nlm.nih.gov/nuccore/AB223054) |
+| green opsin 3 | RH2C | [AB223055](https://www.ncbi.nlm.nih.gov/nuccore/AB223055) |
+| blue opsin 1 | SWS2A | [AB223056](https://www.ncbi.nlm.nih.gov/nuccore/AB223056) |
+| blue opsin 2 | SWS2B | [AB223057](https://www.ncbi.nlm.nih.gov/nuccore/AB223057) |
+| ultraviolet opsin | SWS1 | [AB223058](https://www.ncbi.nlm.nih.gov/nuccore/AB223058) |
 
 ## 3.1. Round 1
+
+In the very first round of read mapping, we use the medaka opsin as a reference.
+
 ## 3.2. Round 2+
 # 4. Cleaning Multiple Sequence Alignments
 # 5. Phylogeny Reconstruction
