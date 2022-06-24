@@ -30,9 +30,9 @@ Acknowledgements:
 4. [Phylogeny Reconstruction (Gene and Species)](#4-phylogeny-reconstruction-gene-and-species)
     * [MrBayes](#41-mrbayes)
     * [IQ-TREE](#42-iq-tree)
-    * [Species Tree](#43-species-tree)
 5. [Ancestral Habitat and Diet Reconstruction [BEAST]](#5-ancestral-habitat-and-diet-reconstruction-beast)
-6. [Cleaning Multiple Sequence Alignments](#6-cleaning-multiple-sequence-alignments)
+6. [Species Tree](#6-species-tree)
+7. [Cleaning Multiple Sequence Alignments](#7-cleaning-multiple-sequence-alignments)
 
 # 1. Install Software
 Software with a * next to the name were already available in the Niagara cluster from Compute Canada. PAML was run on the Lovejoy server.
@@ -214,18 +214,17 @@ The output ```.contree``` will have the node bootstrap values.
 
 Both the Bayesian and maximum likelihood tree can be visualized using any tree visualizing program like FigTree. Here are the figures for the [Beloniformes Bayesian Cone Opsins Tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_AllConeOpsins.nexus.con.tre.pdf) and the [Beloniformes Maximum Likelihood Cone Opsins Tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/IQTREE_AllOpsinsCombined_noRH1.fa.contree.pdf).
 
-## 4.3. Species Tree
-To generate a species tree for the 38 beloniforms, we had obtained an alignment from the whole exome sequencing data that encompassed single-copy exons > 100bp, with at least 85% coverage in all species, concatenated. The total length of the alignment was 1,579,692 bases encompassing 8,768 exons. This alignment included the freshwater medaka but did not include the marine medaka. Because marine medaka is most closely related to the freshwater medaka, this was easy to manually add in as an outgroup.
-
-Using this tree, I ran MrBayes and IQ-TREE on the alignment (same process as above) to obtain my tree. The only difference here is MrBayes has a limit of 99,999 bases, so I trimmed the alignment down to 99,999 bases. Both methods produced identical topologies - resulting in one coherent [species tree]().
-
 # 5. Ancestral Habitat and Diet Reconstruction [BEAST]
 
 To best determine when marine to freshwater transitions occurred within the Beloniformes, using a larger tree is best for ancestral habitat reconstruction.
 [Bloom & Lovejoy 2017](https://devinbloom.files.wordpress.com/2017/08/bloom-lovejoy-2017-jbiogeography.pdf) had constructed a phylogeny for 104 beloniforms and 7 outgroup species using RAG1, RAG2, TMO-4C4, and CYTB genes. We obtained these sequences and I included TMO-4C4 for _Hemiramphodon pogonognathus_, and all four genes for _Rhynchorhamphus georgii_ and _Cheilopogon papilio_ which were missing. Our tree totalled 120 beloniforms and 7 outgroups.
 
+# 6. Species Tree
+To generate a species tree for the 38 beloniforms, we had obtained an alignment from the whole exome sequencing data that encompassed single-copy exons > 100bp, with at least 85% coverage in all species, concatenated. The total length of the alignment was 1,579,692 bases encompassing 8,768 exons. This alignment included the freshwater medaka but did not include the marine medaka. Because marine medaka is most closely related to the freshwater medaka, this was easy to manually add in as an outgroup.
 
-# 6. Cleaning Multiple Sequence Alignments
+Using this tree, I ran MrBayes and IQ-TREE on the alignment (same process as above) to obtain my tree. The only difference here is MrBayes has a limit of 99,999 bases, so I trimmed the alignment down to 99,999 bases. Both methods produced identical topologies - resulting in one coherent [species tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/Bel_0.85_species_tree.jpg). Branch colouring is based of the ancestral habitat reconstruction using maximum likelihood.
+
+# 7. Cleaning Multiple Sequence Alignments
 Premature stop codons or highly gapped regions will hinder calculations in codeml from the PAML program. It is advised to remove all stop codons (the very end of a protein-coding sequence; TAA, TAG, or TGA codons) or you can manually delete positions that are highly gapped.
 
 To be as accurate as possible and keep things consistent between the 8 cone opsin MSAs, I use [alignment_editor.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/alignment_editor.py) which will do three things:
