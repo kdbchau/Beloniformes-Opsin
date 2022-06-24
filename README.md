@@ -91,6 +91,9 @@ Freshwater medaka have 8 cone opsin sequences readily available on [Genbank](htt
 | blue opsin 2 | SWS2B | [AB223057](https://www.ncbi.nlm.nih.gov/nuccore/AB223057) |
 | ultraviolet opsin | SWS1 | [AB223058](https://www.ncbi.nlm.nih.gov/nuccore/AB223058) |
 
+The opsin sequence names and wavelengths discussed in the paper were obtained from [Matusomoto et al. 2006 Gene paper](https://www.sciencedirect.com/science/article/abs/pii/S0378111905007456?via%3Dihub). See image below.
+
+![medaka opsins](https://github.com/kdbchau/Beloniformes/blob/main/Images/medaka_wavelengths.png).
 
 We will also later integrate the marine medaka (_Oryzias melastigma_) sequences which are available at [Ensembl](https://useast.ensembl.org/index.html) and [Genbank](https://www.ncbi.nlm.nih.gov/genbank/). Note: it is called "Indian medaka" on Ensembl.
 
@@ -216,13 +219,10 @@ To generate a species tree for the 38 beloniforms, we had obtained an alignment 
 
 Using this tree, I ran MrBayes and IQ-TREE on the alignment (same process as above) to obtain my tree. The only difference here is MrBayes has a limit of 99,999 bases, so I trimmed the alignment down to 99,999 bases. Both methods produced identical topologies - resulting in one coherent [species tree]().
 
-
-
 # 5. Ancestral Habitat and Diet Reconstruction [BEAST]
 
 To best determine when marine to freshwater transitions occurred within the Beloniformes, using a larger tree is best for ancestral habitat reconstruction.
 [Bloom & Lovejoy 2017](https://devinbloom.files.wordpress.com/2017/08/bloom-lovejoy-2017-jbiogeography.pdf) had constructed a phylogeny for 104 beloniforms and 7 outgroup species using RAG1, RAG2, TMO-4C4, and CYTB genes. We obtained these sequences and I included TMO-4C4 for _Hemiramphodon pogonognathus_, and all four genes for _Rhynchorhamphus georgii_ and _Cheilopogon papilio_ which were missing. Our tree totalled 120 beloniforms and 7 outgroups.
-
 
 
 # 6. Cleaning Multiple Sequence Alignments
