@@ -218,7 +218,8 @@ iqtree -s combined_cone_opsins.fa -bb 1000  # -bb 1000 to get node values
 
 The output ```.contree``` will have the node bootstrap values.
 
-Both the Bayesian and maximum likelihood tree can be visualized using any tree visualizing program like FigTree. Here are the figures for the [Beloniformes Bayesian Cone Opsins Tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_AllConeOpsins.nexus.con.tre.pdf) and the [Beloniformes Maximum Likelihood Cone Opsins Tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/IQTREE_AllOpsinsCombined_noRH1.fa.contree.pdf).
+Both the Bayesian and maximum likelihood tree can be visualized using any tree visualizing program like FigTree. Here are the figures for the Beloniformes Bayesian cone opsin tree ![](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_AllConeOpsins.nexus.con.tre.pdf) 
+and the maximum likelihood cone opsin tree ![](https://github.com/kdbchau/Beloniformes/blob/main/Images/IQTREE_AllOpsinsCombined_noRH1.fa.contree.pdf).
 
 # 5. Ancestral Habitat and Diet Reconstruction [BEAST]
 
