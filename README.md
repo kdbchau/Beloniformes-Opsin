@@ -27,13 +27,12 @@ Acknowledgements:
 3. [Read Mapping](#3-read-mapping)
     * [Round 1](#31-round-1)
     * [Round 2+](#32-round-2)
-4. [Phylogeny Reconstruction](#4-phylogeny-reconstruction)
+4. [Phylogeny Reconstruction (Gene and Species)](#4-phylogeny-reconstruction-gene-and-species)
     * [MrBayes](#41-mrbayes)
     * [IQ-TREE](#42-iq-tree)
+    * [Species Tree](#43-species-tree)
 5. [Ancestral Habitat and Diet Reconstruction [BEAST]](#5-ancestral-habitat-and-diet-reconstruction-beast)
 6. [Cleaning Multiple Sequence Alignments](#6-cleaning-multiple-sequence-alignments)
-
-
 
 # 1. Install Software
 Software with a * next to the name were already available in the Niagara cluster from Compute Canada. PAML was run on the Lovejoy server.
@@ -123,9 +122,7 @@ The above script will use a python script called [consensus.py](https://github.c
 
 
 ## 3.2. Round 2+
-Sometimes, using just freshwater medaka as a reference is not good enough. Because medaka are quite divergent from the rest of the beloniformes, we can use information ffrom the first round mapping to create "makeshift" or "chimeric" reference sequences that should be helpful to fill in more gaps. See the figure below.
-
-![](https://github.com/kdbchau/Beloniformes/blob/main/Images/Screenshot%202022-06-23%20151643.png)
+Sometimes, using just freshwater medaka as a reference is not good enough. Because medaka are quite divergent from the rest of the beloniformes, we can use information ffrom the first round mapping to create "makeshift" or "chimeric" reference sequences that should be helpful to fill in more gaps. See this [figure](https://github.com/kdbchau/Beloniformes/blob/main/Images/readassembly.pdf) for a visual on the process.
 
 The second and subsequent rounds use these makeshift sequences that are filled in with nucleotides from the top most complete beloniform (after medaka which would be 100% complete because it is a direct match to itself).
 
@@ -161,7 +158,7 @@ python merge_seqs.py round1_MSA round3_MSA # where the second MSA called is the 
 
 After this, we will have our opsin MSAs to work with. But despite all this read mapping and refining, there are still regions in the MSA that are very gapped or have premature stop codons and need to be removed for effective codeml analysis.
 
-# 4. Phylogeny Reconstruction
+# 4. Phylogeny Reconstruction [Gene and Species]
 
 Using the full MSAs (prior to cleaning), we can construct our phylogenys. I used IQTREE for a maximum likelihood reconstruction and MrBayes for a Bayesion reconstruction.
 
@@ -205,6 +202,13 @@ iqtree -s combined_cone_opsins.fa -bb 1000  # -bb 1000 to get node values
 The output ```.contree``` will have the node bootstrap values.
 
 Both the Bayesian and maximum likelihood tree can be visualized using any tree visualizing program like FigTree. Here are the figures for the [Beloniformes Bayesian Cone Opsins Tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_AllConeOpsins.nexus.con.tre.pdf) and the [Beloniformes Maximum Likelihood Cone Opsins Tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/IQTREE_AllOpsinsCombined_noRH1.fa.contree.pdf).
+
+## 4.3. Species Tree
+To generate a species tree for the 38 beloniforms, we had obtained an alignment from the whole exome sequencing data that encompassed single-copy exons > 100bp, with at least 85% coverage in all species, concatenated. The total length of the alignment was 1,579,692 bases encompassing 8,768 exons. This alignment included the freshwater medaka but did not include the marine medaka. Because marine medaka is most closely related to the freshwater medaka, this was easy to manually add in as an outgroup.
+
+Using this tree, I ran MrBayes and IQ-TREE on the alignment (same process as above) to obtain my tree. The only difference here is MrBayes has a limit of 99,999 bases, so I trimmed the alignment down to 99,999 bases. Both methods produced identical topologies - resulting in one coherent [species tree]().
+
+
 
 # 5. Ancestral Habitat and Diet Reconstruction [BEAST]
 
