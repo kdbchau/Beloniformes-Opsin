@@ -54,9 +54,9 @@ A fast, unconstrained Bayesian approximation for inferring selection ([FUBAR](ht
 
 # 2. Quality Control
 
-Whole exome sequence data for 36 beloniform species was extracted by [Dr. Jake Daane](https://www.daanelab.org/) and [Dr. Matthew Harris Laboratory](http://www.fishbonelab.org/harris/Home.html). This project is in collaboration with the Harris Lab from Harvard Medical School.
+Whole exome sequence data for 36 beloniform species was extracted by [Jacob M. Daane](https://www.daanelab.org/) and [Dr. Matthew Harris Laboratory](http://www.fishbonelab.org/harris/Home.html). This project is in collaboration with the Harris Lab from Harvard Medical School.
 
-For tissue and DNA extraction method of exome sequences, see this [paper](https://www.cell.com/current-biology/fulltext/S0960-9822(21)01190-8?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982221011908%3Fshowall%3Dtrue) and the _Targeted sequence capture design_ and _Specimen tissue collection and sequencing library preparation_ section in this [paper](https://www.biorxiv.org/content/10.1101/2021.03.05.434157v1.full).
+For tissue and DNA extraction method of exome sequences, see this paper by [Daane et al., 2021 in _Current Biology_](https://www.cell.com/current-biology/fulltext/S0960-9822(21)01190-8?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982221011908%3Fshowall%3Dtrue) and the _Targeted sequence capture design_ and _Specimen tissue collection and sequencing library preparation_ section in [Daane et al., 2021 in _bioRxiv_](https://www.biorxiv.org/content/10.1101/2021.03.05.434157v1.full).
 
 FastQC was run on each fastq file for each beloniform species using default settings. I used the [fastqc.sh](https://github.com/kdbchau/Beloniformes/tree/main/Scripts/fastqc.sh) script.
 
