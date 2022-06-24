@@ -25,15 +25,15 @@ Acknowledgements:
     * [3.1. Round 1](#31-round-1)
     * [3.2. Round 2+](#32-round-2)
 4. [Phylogeny Reconstruction (Gene and Species)](#4-phylogeny-reconstruction-gene-and-species)
-    * [MrBayes](#41-mrbayes)
-    * [IQ-TREE](#42-iq-tree)
+    * [4.1. MrBayes](#41-mrbayes)
+    * [4.2. IQ-TREE](#42-iq-tree)
 5. [Ancestral Habitat and Diet Reconstruction [BEAST]](#5-ancestral-habitat-and-diet-reconstruction-beast)
 6. [Species Tree](#6-species-tree)
 7. [Cleaning Multiple Sequence Alignments](#7-cleaning-multiple-sequence-alignments)
 8. [Molecular Evolutionary Analyses](#8-molecular-evolutionary-analyses)
-    * [Random Sites](#81-random-sites)
-    * [Clade and Branch Models](#82-clade-and-branch-models)
-    * [Ancestral Amino Acid Reconstruction](#83-ancestral-amino-acid-reconstruction)
+    * [8.1. Random Sites and FUBAR](#81-random-sites-and-fubar)
+    * [8.2. Clade and Branch Models](#82-clade-and-branch-models)
+    * [8.3. Ancestral Amino Acid Reconstruction](#83-ancestral-amino-acid-reconstruction)
 
 # 1. Install Software
 Software with a * next to the name were already available in the Niagara cluster from Compute Canada. PAML was run on the Lovejoy server.
@@ -296,8 +296,37 @@ In this section, we implement CODEML from the PAML program to determine patterns
 
 In order to run codeml, we need to set up codeml.ctl files for each opsin and create a newick tree file for the program to call with each alignment. Labeling of branches is done in [TreeView](https://treeview.co.uk/download-file/?v=2) but any editor program will work, including Notepad.
 
-## 8.1. Random-Sites
-Random-sites
+Note: All CODEML analyses were run three times using different starting kappa and omega values. Out of these three, the models with the lowest lnL values were used for drawing conclusions.
+
+* kappa = 1, omega = 0.5
+* kappa = 2, omega = 1
+* kappa = 3, omega = 2
+
+## 8.1. Random-Sites and FUBAR
+Random-sites models (M0, M1a, M2a, M3, M7, M8, and M8a) was used to assess positive selection for each group. Our data has five groups being assessed. Species belonging to each group were extracted from each cone opsin and run individually. For example, out of 38  beloniforms, 10 are freshwater and 28 are marine - so each cone opsin was split into two MSAs (each with their own mini newick tree file) for freshwater and marine. 
+
+There was an alignment and tree (generated in Mesquite which allows you to remove taxa and recreate the tree) for: freshwater, marine, piscivores, zooplanktivores, and herbivores.
+
+Positive selection is determined when M2a vs. M1a is significant, M8 vs. M7 was significant, as well as M8 vs. M8a was significant. For a full explanation on testing positive selection using these models, see [Yang 2007](https://academic.oup.com/mbe/article/24/8/1586/1103731). Model M3 vs. M0 just assesses variation for three site classes.
+
+The same alignments and trees were used for FUBAR analyses on the [Datamonkey Server](http://www.datamonkey.org/fubar). FUBAR allows for synonymous substitutions (dS) to be estimated independently, whereas random-sites models in CODEML does not account for selection on synonymous sites.
+
+An example of my codeml.ctl file is shown [here](https://github.com/kdbchau/Beloniformes/blob/main/Downloadables/codeml.ctl) for the freshwater alignment for LWSA using kappa 1 and omega 0.5. An example of the treefile is shown [here](https://github.com/kdbchau/Beloniformes/blob/main/Downloadables/bel_freshwater.phy).
 
 ## 8.2. Clade and Branch Models
+Clade and branch models are run in the same manner, using a codeml.ctl file and a treefile. However, this time the full MSA is used (no separating groups) and instead the branches are labeled to indicate the "foreground" partition. For more explanation on PAML and partitions, see [Yang's PAML Doc](http://abacus.gene.ucl.ac.uk/software/pamlDOC.pdf).
+
+In this case, five different labelings were used. The fifth one includes multiple foreground partitions (which cannot be used for branch-site models).
+1. Foreground = freshwater, background = marine
+2. Foreground = piscivores, background = remaining beloniforms
+3. Foreground = zooplanktivores, background = remaining beloniforms
+4. Foreground = herbivores, background = remaining beloniforms
+5. Foreground 1 = piscivores, foreground 2 = herbivores, foreground 3 = zooplanktivores, background = generalists.
+
+Because we are comparing many different scenerios, we also implemented Akaike Information Criterion ([AIC](https://ieeexplore.ieee.org/document/1100705)). Models with ΔAIC < 2 are deemed the most likely to explain the observed patterns of selection for each cone opsin.
+
+To calculate ΔAIC, the following was used from parameters obtained in CODEML output files (log files).
+
+$AIC = (-2 * lnL) + (2 * np)$
+
 ## 8.3. Ancestral Amino Acid Reconstruction
