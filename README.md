@@ -174,14 +174,18 @@ python alignment_editor.py input_msa.fa 0.1 0.3 output_msa.fa # if using 10% sto
 ```
 
 Eight files are moved into a new folder with the opsin name as the folder name and a #### attached to indicate the stop-gaps % used (i.e. rh2a_msa_1030):
-1. __input_msa.fa__ (i.e. rh2a_msa.fa)
-2. __output_msa\_####.fa__ (i.e. rh2a_msa_1030.fa); 10 for 10% and 30 for 30%).
-3. __output_msa\_####.phy__ (Phylip version of the output_msa.fa)'
-4. __output_msa\_####\_RemovedAttributes.xlsx__ (Contains one tab showing all gap columns removed, second tab with all stop columns removed, and third column where any stop codons were changed to a gap: each will have original codon position shown in row 1)
-5. __output_msa\_####\_RemovedChange.txt__ (Textfile version of columns where stops that were present but not removed, changed to a gap).
-6. __output_msa\_####\_RemovedGaps.txt__ (Textfile version of columns with removed gaps)
-7. __output_msa\_####\_RemovedStops.txt__ (Textfile version of columns with removed stops)
-8. __output_msa\_####\_STATS.txt__ (Overall stats of the cleanup, shows how many total bases removed, most common codon in remaining msa, etc.)
+
+| # | File | Example | Description |
+| --- | --- | --- | --- |
+|1 |__input_msa.fa__ |rh2a_msa.fa | original, unedited msa|
+|2 | __output_msa\_####.fa__| rh2a_msa_1030.fa| cleaned msa; value indicates cleanup thresholds use (i.e. 1030 = 10% stop codon removal and 30 for 30% gap removal)|
+|3 |__output_msa\_####.phy__ | rh2a_msa_1030.phy | Phylip version of the output_msa.fa|
+|4 |__output_msa\_####\_RemovedAttributes.xlsx__ | rh2a_msa_1030_RemovedAttributed.xlsx| Collection of the textfiles that show the codons removed/edited|
+|5 |__output_msa\_####\_RemovedChange.txt__ |rh2a_msa_1030_RemovedChange.txt | Textfile of codon positions where stops that were present but not removed changed to a gap|
+|6 |__output_msa\_####\_RemovedGaps.txt__ | rh2a_msa_1030_RemovedGaps.txt|Textfile of codon positions with removed gaps |
+|7 |__output_msa\_####\_RemovedStops.txt__ |rh2a_msa_1030_RemovedStops.txt | Textfile of codon positions with removed stops|
+|8 | __output_msa\_####\_STATS.txt__|rh2a_msa_1030_STATS.txt | Overall stats of the cleanup, shows how many total bases removed, most common codon in remaining msa, etc.|
+
 
 # 5. Phylogeny Reconstruction
 # 6. Ancestral Habitat and Diet Reconstruction
