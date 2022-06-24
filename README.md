@@ -175,8 +175,8 @@ python alignment_editor.py input_msa.fa 0.1 0.3 output_msa.fa # if using 10% sto
 
 Eight files are moved into a new folder with the opsin name as the folder name and a #### attached to indicate the stop-gaps % used (i.e. rh2a_msa_1030):
 1. __input_msa.fa__ (i.e. rh2a_msa.fa)
-2. __output_msa_####.fa__ (i.e. rh2a_msa_1030.fa); 10 for 10% and 30 for 30%).
-3. __output_msa_####.phy__ (Phylip version of the output_msa.fa)'
+2. __output_msa\_####.fa__ (i.e. rh2a_msa_1030.fa); 10 for 10% and 30 for 30%).
+3. __output_msa\_####.phy__ (Phylip version of the output_msa.fa)'
 4. __output_msa\_####\_RemovedAttributes.xlsx__ (Contains one tab showing all gap columns removed, second tab with all stop columns removed, and third column where any stop codons were changed to a gap: each will have original codon position shown in row 1)
 5. __output_msa\_####\_RemovedChange.txt__ (Textfile version of columns where stops that were present but not removed, changed to a gap).
 6. __output_msa\_####\_RemovedGaps.txt__ (Textfile version of columns with removed gaps)
