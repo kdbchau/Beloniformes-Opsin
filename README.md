@@ -168,7 +168,9 @@ After this, we will have our opsin MSAs to work with. But despite all this read 
 
 Using the full MSAs (prior to cleaning), we can construct our phylogenys. I used IQTREE for a maximum likelihood reconstruction and MrBayes for a Bayesion reconstruction.
 
-In both cases, all cone opsin MSAs were combined into one file and aligned as translated amino acids using MUSCLE alignemnt (use any program for this - I used [AliView](https://ormbunkar.se/aliview/)), and include some outgroup species for better root determination. I included the zebrafish and guppy opsin reference sequences I used for round 1 mapping.
+In both cases, all cone opsin MSAs were combined into one file and aligned as translated amino acids using MUSCLE alignment (use any program for this - I used [AliView](https://ormbunkar.se/aliview/)), and include some outgroup species for better root determination. I included the zebrafish and guppy opsin reference sequences I used for round 1 mapping.
+
+For the aligned fasta file of cone opsins combined, download file [here](https://github.com/kdbchau/Beloniformes/blob/main/Downloadables/combined_cone_opsins.fa).
 
 You can also use programs like [AliView](https://ormbunkar.se/aliview/)) to convert the aligned MSA into Phylip foramt, which is needed for MrBayes and IQ-TREE (but IQ-TREE can use a fasta format as well).
 
