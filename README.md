@@ -294,6 +294,10 @@ Eight files are moved into a new folder with the opsin name as the folder name a
 # 8. Molecular Evolutionary Analyses
 In this section, we implement CODEML from the PAML program to determine patterns of selection in each of the cone opsins and how they may have evolved with respect to changes in habitat and diet.
 
-## 8.1. Random Sites
+In order to run codeml, we need to set up codeml.ctl files for each opsin and create a newick tree file for the program to call with each alignment. Labeling of branches is done in [TreeView](https://treeview.co.uk/download-file/?v=2) but any editor program will work, including Notepad.
+
+## 8.1. Random-Sites
+Random-sites
+
 ## 8.2. Clade and Branch Models
 ## 8.3. Ancestral Amino Acid Reconstruction
