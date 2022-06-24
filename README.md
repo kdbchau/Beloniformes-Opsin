@@ -69,8 +69,7 @@ module load trimmomatic
 
 for file in *fastq; do java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.38.jar SE -phred33 $file "${file%%_*}_trimmed.fastq" ILLUMINACLIP:TruSeq3-SE:2:30:10 SLIDINGWINDOW:4:20 HEADCROP:5
 ```
-
-Then rerun FastQC on the trimmed files to ensure adapters were removed and sequences look good.
+Then rerun FastQC on the trimmed files to ensure adapters were removed and sequences look good. Although I didn't use it, I recommend [MultiQC](https://multiqc.info/) for easier visualization of quality cleanup in section 2. I just checked the fastqc output for the trimmed files to ensure adapters were removed and base quality was high, which it was. There were some warnings such as sequenceduplication in a couple species and some species having variable bases at the beginning (since I didn't use HEADCROP in trimmomatic) but I didn't want to trim because I wanted to keep as much information as possible for protein-coding gene assembly. 
 
 # 3. Read Mapping
 The trimmed beloniform exome sequences were then used for mapping against _Oryzias latipes_ (freshwater medaka) sequences to extract opsins.
