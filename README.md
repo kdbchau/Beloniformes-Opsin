@@ -30,7 +30,7 @@ Acknowledgements:
 5. [Ancestral Habitat and Diet Reconstruction [BEAST]](#5-ancestral-habitat-and-diet-reconstruction-beast)
 6. [Species Tree](#6-species-tree)
 7. [Cleaning Multiple Sequence Alignments](#7-cleaning-multiple-sequence-alignments)
-8. [PAML](#8-paml)
+8. [Molecular Evolutionary Analyses](#8-molecular-evolutionary-analyses)
     * [Random Sites](#81-random-sites)
     * [Clade and Branch Models](#82-clade-and-branch-models)
     * [Ancestral Amino Acid Reconstruction](#83-ancestral-amino-acid-reconstruction)
@@ -250,6 +250,11 @@ For a higher resolution download image [here](https://github.com/kdbchau/Belonif
 
 ![pruned tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/PrunedBeltree.png)
 
+Using the pruned tree and literature research, reconstructing diet was easier as we based it off each family. Needlefishes are primarily piscivorous (except for _Belonion dibranchodon_ and _Potamorrhaphis guianensis_), flyingfishes and sauries feed on zooplankton, halfbeaks are herbivorous feeding on plants and algae. Medakas and the two non-piscivorous needlefishes feed on insects, algae or other small taxa like zooplankton, so they are classified as generalists. 
+
+Below is the figure showing both habitat and diet transitions for the 38 Beloniformes.
+![diet and habitat beloniformes](https://github.com/kdbchau/Beloniformes/blob/main/Images/Habitat_Diet_Transitions_Big_2022.jpg)
+
 # 6. Species Tree
 To generate a species tree for the 38 beloniforms, we had obtained an alignment from the whole exome sequencing data that encompassed single-copy exons >100bp, with at least 85% coverage in all species, concatenated. The total length of the alignment was 1,579,692 bases encompassing 8,768 exons. This alignment included the freshwater medaka but did not include the marine medaka. Because marine medaka is most closely related to the freshwater medaka, this was easy to manually add in as an outgroup.
 
@@ -286,7 +291,8 @@ Eight files are moved into a new folder with the opsin name as the folder name a
 |7 |__output_msa\_####\_RemovedStops.txt__ |rh2a_msa_1030_RemovedStops.txt | Textfile of codon positions with removed stops|
 |8 | __output_msa\_####\_STATS.txt__|rh2a_msa_1030_STATS.txt | Overall stats of the cleanup, shows how many total bases removed, most common codon in remaining msa, etc.|
 
-# 8. PAML
+# 8. Molecular Evolutionary Analyses
+In this section, we implement CODEML from the PAML program to determine patterns of selection in each of the cone opsins and how they may have evolved with respect to changes in habitat and diet.
 
 ## 8.1. Random Sites
 ## 8.2. Clade and Branch Models
