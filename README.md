@@ -30,8 +30,8 @@ Acknowledgements:
 4. [Phylogeny Reconstruction](#4-phylogeny-reconstruction)
     * [MrBayes](#41-mrbayes)
     * [IQ-TREE](#42-iq-tree)
-5. [Ancestral Habitat and Diet Reconstruction [BEAST]](#6-ancestral-habitat-and-diet-reconstruction-beast)
-6. [Cleaning Multiple Sequence Alignments](#5-cleaning-multiple-sequence-alignments)
+5. [Ancestral Habitat and Diet Reconstruction [BEAST]](#5-ancestral-habitat-and-diet-reconstruction-beast)
+6. [Cleaning Multiple Sequence Alignments](#6-cleaning-multiple-sequence-alignments)
 
 
 
