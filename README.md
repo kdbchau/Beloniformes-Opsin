@@ -28,6 +28,8 @@ Acknowledgements:
     * [Round 1](#31-round-1)
     * [Round 2+](#32-round-2+)
 4. [Phylogeny Reconstruction](#4-phylogeny-reconstruction)
+    * [MrBayes](#41-mrbayes)
+    * [IQTree]($42-iqtree)
 5. [Cleaning Multiple Sequence Alignments](#5-cleaning-multiple-sequence-alignments)
 6. [Ancestral Habitat and Diet Reconstruction](#6-ancestral-habitat-and-diet-reconstruction)
 
@@ -158,6 +160,37 @@ python merge_seqs.py round1_MSA round3_MSA # where the second MSA called is the 
 After this, we will have our opsin MSAs to work with. But despite all this read mapping and refining, there are still regions in the MSA that are very gapped or have premature stop codons and need to be removed for effective codeml analysis.
 
 # 4. Phylogeny Reconstruction
+
+Using the full MSAs (prior to cleaning), we can construct our phylogenys. I used IQTREE for a maximum likelihood reconstruction and MrBayes for a Bayesion reconstruction.
+
+In both cases, all cone opsin MSAs were combined into one file and aligned as translated amino acids using MUSCLE alignemnt (use any program for this - I used [AliView](https://ormbunkar.se/aliview/)), and include some outgroup species for better root determination. I included the zebrafish and guppy opsin reference sequences I used for round 1 mapping.
+
+You can also use programs like AliView to convert the aligned MSA into Phylip foramt, which is needed for MrBayes and IQtree (but IQtree can use a fasta format as well).
+
+## 4.1. MrBayes
+To run MrBayes, a nexus file must be created. Templates can be found [here](https://github.com/NBISweden/MrBayes/tree/v3.2.7a/examples). 
+
+For my data, I set dimensions to:
+* ntax=310 (because I combined 8 cone opsins each with 38 beloniforms, 8\*38=304, plus guppy RH2BC and RH2A and zebrafish LWS1 and LWS2; totally 310 species).
+* nchar=1104 (after aligning everything, the total length of the MSA was 1104 bases).
+* format gap = - (hyphens represent gaps)
+* datatype = dna (I used dna sequences, not amino acid although everythign was in proper reaading frame)
+* missing = ? (for any missing info - my alignments just had gaps, no question marks).
+
+Then using the phylip file version of the MSA, input it into the nexus file where it says to. Afterwards there is a MrBayes block with additional parameters that need to be set. These are my settings:
+* outgroup Danio_rerio_LWS2;
+* lset nst=6 rates=gamma;
+* set autoclose=yes nowarn=yes;
+* mcmc ngen=1000000 printfreq=100 samplefreq=100 nruns=2 nchains=4 savebrlens=yes;
+* sump; (leaving this blank uses default of 25% burn-in)
+* sumt nruns=2 ntrees=1 contype=halfcompat conformat=simple;
+
+Then double click the MrBayes.exe and a terminal window should open up.
+
+
+## 4.2. IQTree
+
+
 
 # 5. Cleaning Multiple Sequence Alignments
 Premature stop codons or highly gapped regions will hinder calculations in codeml from the PAML program. It is advised to remove all stop codons (the very end of a protein-coding sequence; TAA, TAG, or TGA codons) or you can manually delete positions that are highly gapped.
