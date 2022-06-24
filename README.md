@@ -30,8 +30,9 @@ Acknowledgements:
 4. [Phylogeny Reconstruction](#4-phylogeny-reconstruction)
     * [MrBayes](#41-mrbayes)
     * [IQ-TREE]($42-iqtree)
-5. [Cleaning Multiple Sequence Alignments](#5-cleaning-multiple-sequence-alignments)
-6. [Ancestral Habitat and Diet Reconstruction](#6-ancestral-habitat-and-diet-reconstruction)
+5. [Ancestral Habitat and Diet Reconstruction](#6-ancestral-habitat-and-diet-reconstruction)
+6. [Cleaning Multiple Sequence Alignments](#5-cleaning-multiple-sequence-alignments)
+
 
 
 # 1. Install Software
@@ -45,6 +46,7 @@ Software with a * next to the name were already available in the Niagara cluster
 6. [__MrBayes__](http://nbisweden.github.io/MrBayes/) (version 3.2.6)
 7. [__BEAST__](https://beast.community/) (version 1.8.4)
 8. [__PAML__](http://abacus.gene.ucl.ac.uk/software/paml.html) (version 4)
+9. [__FigTree__](http://tree.bio.ed.ac.uk/software/figtree/)
 
 ## 1.1. Additional Software
 This includes software that was used but not installed onto a cluster, rather, they are available online.
@@ -165,7 +167,7 @@ Using the full MSAs (prior to cleaning), we can construct our phylogenys. I used
 
 In both cases, all cone opsin MSAs were combined into one file and aligned as translated amino acids using MUSCLE alignemnt (use any program for this - I used [AliView](https://ormbunkar.se/aliview/)), and include some outgroup species for better root determination. I included the zebrafish and guppy opsin reference sequences I used for round 1 mapping.
 
-You can also use programs like AliView to convert the aligned MSA into Phylip foramt, which is needed for MrBayes and IQ-TREE (but IQ-TREE can use a fasta format as well).
+You can also use programs like [AliView](https://ormbunkar.se/aliview/)) to convert the aligned MSA into Phylip foramt, which is needed for MrBayes and IQ-TREE (but IQ-TREE can use a fasta format as well).
 
 ## 4.1. MrBayes
 To run MrBayes, a nexus file must be created. Templates can be found [here](https://github.com/NBISweden/MrBayes/tree/v3.2.7a/examples). 
@@ -193,9 +195,20 @@ In my case, it did have an upward trend but my [standard deviation values approa
 
 ## 4.2. IQ-TREE
 
+Ultrafast bootstrap IQ-TREE is simpler, once installed it can be called from a terminal.
 
+Simply run it as:
+```
+iqtree -s combined_cone_opsins.fa -bb 1000  # -bb 1000 to get node values
+```
 
-# 5. Cleaning Multiple Sequence Alignments
+The output ```.contree``` will have the node bootstrap values.
+
+Both the Bayesian and maximum likelihood tree can be visualized using any tree visualizing program like FigTree. Here are the figures for the [Beloniformes Bayesian Cone Opsins Tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_AllConeOpsins.nexus.con.tre.pdf) and the [Beloniformes Maximum Likelihood Cone Opsins Tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/IQTREE_AllOpsinsCombined_noRH1.fa.contree.pdf).
+
+# 5. Ancestral Habitat and Diet Reconstruction
+
+# 6. Cleaning Multiple Sequence Alignments
 Premature stop codons or highly gapped regions will hinder calculations in codeml from the PAML program. It is advised to remove all stop codons (the very end of a protein-coding sequence; TAA, TAG, or TGA codons) or you can manually delete positions that are highly gapped.
 
 To be as accurate as possible and keep things consistent between the 8 cone opsin MSAs, I use [alignment_editor.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/alignment_editor.py) which will do three things:
@@ -224,5 +237,3 @@ Eight files are moved into a new folder with the opsin name as the folder name a
 |7 |__output_msa\_####\_RemovedStops.txt__ |rh2a_msa_1030_RemovedStops.txt | Textfile of codon positions with removed stops|
 |8 | __output_msa\_####\_STATS.txt__|rh2a_msa_1030_STATS.txt | Overall stats of the cleanup, shows how many total bases removed, most common codon in remaining msa, etc.|
 
-
-# 6. Ancestral Habitat and Diet Reconstruction
