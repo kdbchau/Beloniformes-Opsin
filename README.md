@@ -29,7 +29,7 @@ Acknowledgements:
     * [Round 2+](#32-round-2+)
 4. [Phylogeny Reconstruction](#4-phylogeny-reconstruction)
     * [MrBayes](#41-mrbayes)
-    * [IQTree]($42-iqtree)
+    * [IQ-TREE]($42-iqtree)
 5. [Cleaning Multiple Sequence Alignments](#5-cleaning-multiple-sequence-alignments)
 6. [Ancestral Habitat and Diet Reconstruction](#6-ancestral-habitat-and-diet-reconstruction)
 
@@ -107,7 +107,7 @@ We will also later integrate the marine medaka (_Oryzias melastigma_) sequences 
 
 ## 3.1. Round 1
 
-In the very first round of read mapping, use the protein-coding opsin sequence from freshwater medaka. The mapping script is [here](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/mapping.sh). This was run on the Niagara cluster from ComputeCanada. BWA is used as the mapping software. 
+In the very first round of read mapping, use the protein-coding opsin sequence from freshwater medaka. I used [mapping.sh](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/mapping.sh). This was run on the Niagara cluster from ComputeCanada. BWA is used as the mapping software. 
 
 However, upon trial and error it was found that because of high sequence similarity in the LWS opsins (see this [paper](https://www.nature.com/articles/s41598-019-39978-6)), and in the RH2 opsins for the medakas, I used zebrafish (_Danio rerio_) LWS and guppy RH2 (_Poecilia reticulata_) opsins in the first round of read mapping.
 
@@ -165,7 +165,7 @@ Using the full MSAs (prior to cleaning), we can construct our phylogenys. I used
 
 In both cases, all cone opsin MSAs were combined into one file and aligned as translated amino acids using MUSCLE alignemnt (use any program for this - I used [AliView](https://ormbunkar.se/aliview/)), and include some outgroup species for better root determination. I included the zebrafish and guppy opsin reference sequences I used for round 1 mapping.
 
-You can also use programs like AliView to convert the aligned MSA into Phylip foramt, which is needed for MrBayes and IQtree (but IQtree can use a fasta format as well).
+You can also use programs like AliView to convert the aligned MSA into Phylip foramt, which is needed for MrBayes and IQ-TREE (but IQ-TREE can use a fasta format as well).
 
 ## 4.1. MrBayes
 To run MrBayes, a nexus file must be created. Templates can be found [here](https://github.com/NBISweden/MrBayes/tree/v3.2.7a/examples). 
@@ -186,9 +186,12 @@ Then using the phylip file version of the MSA, input it into the nexus file wher
 * sumt nruns=2 ntrees=1 contype=halfcompat conformat=simple;
 
 Then double click the MrBayes.exe and a terminal window should open up.
+![](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes.png)
 
+Once executed, it will run for a while and then complete. The run was successful if met with convergence, noted by a plot produced at the end that looks randomized.
+In my case, it did have an upward trend but my [standard deviation values approached 0](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_StandardDeviations.png) and my [PSRF values were around 1](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_PSRF.png) - this is okay although this can be improved using a different burn-in, more runs, etc. The tree ends up looking the same as IQ-TREE so not a huge problem.
 
-## 4.2. IQTree
+## 4.2. IQ-TREE
 
 
 
