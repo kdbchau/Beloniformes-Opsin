@@ -23,13 +23,13 @@ Acknowledgements:
 # Table of Contents
 1. [Install software](#1-install-software)
     * [Additional Software](#11-additional-software)
-3. [Quality Control](#2-quality-control)
-4. [Read Mapping](#3-read-mapping)
+2. [Quality Control](#2-quality-control)
+3. [Read Mapping](#3-read-mapping)
     * [Round 1](#31-round-1)
     * [Round 2+](#32-round-2+)
-5. [Cleaning Multiple Sequence Alignments](#4-cleaning-multiple-sequence-alignments)
-6. [Phylogeny Reconstruction](#5-phylogeny-reconstruction)
-7. [Ancestral Habitat and Diet Reconstruction](#6-ancestral-habitat-and-diet-reconstruction)
+4. [Phylogeny Reconstruction](#4-phylogeny-reconstruction)
+5. [Cleaning Multiple Sequence Alignments](#5-cleaning-multiple-sequence-alignments)
+6. [Ancestral Habitat and Diet Reconstruction](#6-ancestral-habitat-and-diet-reconstruction)
 
 
 # 1. Install Software
@@ -157,7 +157,9 @@ python merge_seqs.py round1_MSA round3_MSA # where the second MSA called is the 
 
 After this, we will have our opsin MSAs to work with. But despite all this read mapping and refining, there are still regions in the MSA that are very gapped or have premature stop codons and need to be removed for effective codeml analysis.
 
-# 4. Cleaning Multiple Sequence Alignments
+# 4. Phylogeny Reconstruction
+
+# 5. Cleaning Multiple Sequence Alignments
 Premature stop codons or highly gapped regions will hinder calculations in codeml from the PAML program. It is advised to remove all stop codons (the very end of a protein-coding sequence; TAA, TAG, or TGA codons) or you can manually delete positions that are highly gapped.
 
 To be as accurate as possible and keep things consistent between the 8 cone opsin MSAs, I use [alignment_editor.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/alignment_editor.py) which will do three things:
@@ -187,5 +189,4 @@ Eight files are moved into a new folder with the opsin name as the folder name a
 |8 | __output_msa\_####\_STATS.txt__|rh2a_msa_1030_STATS.txt | Overall stats of the cleanup, shows how many total bases removed, most common codon in remaining msa, etc.|
 
 
-# 5. Phylogeny Reconstruction
 # 6. Ancestral Habitat and Diet Reconstruction
