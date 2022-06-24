@@ -95,7 +95,7 @@ Freshwater medaka have 8 cone opsin sequences readily available on [Genbank](htt
 
 The opsin sequence names and wavelengths discussed in the paper were obtained from [Matsumoto et al. 2006 _Gene_ paper](https://www.sciencedirect.com/science/article/abs/pii/S0378111905007456?via%3Dihub). See image below.
 
-![medaka opsins](https://github.com/kdbchau/Beloniformes/blob/main/Images/medaka_wavelengths.png).
+![medaka opsins](https://github.com/kdbchau/Beloniformes/blob/main/Images/medaka_wavelengths.png)
 
 We will also later integrate the marine medaka (_Oryzias melastigma_) sequences which are available at [Ensembl](https://useast.ensembl.org/index.html) and [Genbank](https://www.ncbi.nlm.nih.gov/genbank/). Note: it is called "Indian medaka" on Ensembl.
 
