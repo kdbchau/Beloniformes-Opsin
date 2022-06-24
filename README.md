@@ -325,8 +325,17 @@ In this case, five different labelings were used. The fifth one includes multipl
 
 Because we are comparing many different scenerios, we also implemented Akaike Information Criterion ([AIC](https://ieeexplore.ieee.org/document/1100705)). Models with ΔAIC < 2 are deemed the most likely to explain the observed patterns of selection for each cone opsin.
 
-To calculate ΔAIC, the following was used from parameters obtained in CODEML output files (log files).
+To calculate ΔAIC, the following was used from parameters obtained in CODEML output files (log file names are specified in codeml.ctl).
 
 $AIC = (-2 * lnL) + (2 * np)$
+
+For example looking at one cone opsin, once AIC is calculated for each of the 5 models, the model with the lowest AIC is identified as the best fit model, and we use its AIC value to see if any other models have ΔAIC < 2. Simply take the AIC value for a model and subtract it from the model with the lowest AIC (this means the best fit model will automatically have ΔAIC = 0).
+
+Here is an example of my CmC model output and values (image below).
+
+![CmC for SWS1](https://github.com/kdbchau/Beloniformes/blob/main/Images/CmCAIC.png).
+
+Here, setting the zooplanktivores as the foreground only was the best fit model for the ultraviolet-sensitive opsin SWS1. However, using habitat where freshwater beloniforms were the foreground can also be considered a good model to explain variation in SWS1 codons, since its ΔAIC was less than 2. 
+
 
 ## 8.3. Ancestral Amino Acid Reconstruction
