@@ -342,3 +342,24 @@ Here, setting the zooplanktivores as the foreground only was the best fit model 
 
 
 ## 8.3. Ancestral Amino Acid Reconstruction
+The last step was reconstructing ancestral amino acids for each opsin. First, we used AIC from [ModelFinder]([http://www.iqtree.org/ModelFinder/](http://www.iqtree.org/doc/Tutorial)) in IQ-TREE to determine the best model to explain amino acid evolution for each opsin.
+
+```
+# Example of how to get the best model for a cone opsin
+iqtree -s lwsa_msa_1030.fa -st NT2AA -m TEST -AIC -nt 1  #
+```
+
+This will produce a log file output that will show testing for all the models. At the bottom there will be several output for different algorithms deciding the best amino acid model. We use AIC.
+
+Here were the best models for each opsin. Based on this, we need to specifiy the approprate dat file in the codeml.ctl file for ancestral amino acid reconstruction. Here is an example of a codeml.ctl file for [amino acid reconstruction] and changing ```aaRatefile``` variable to call the appropriate amino acid model saved in the codeml bin folder.
+
+|Opsin|AIC Model| aaRatefile model|
+|---|---|---|
+| LWSA | LG+F+I+G4  | lg.dat |
+| LWSB | LG+F+I+G4  |lg.dat |
+| RH2A |mtZOA+F+I+G4  | MtZoa.dat|
+| RH2B | LG+F+I+G4  |lg.dat |
+| RH2C | LG+F+I+G4 |lg.dat |
+| SWS2A |LG+F+I+G4  |lg.dat |
+| SWS2B |JTT+F+I+G4  |jones.dat |
+| SWS1 |JTTDCMut+F+I+G4  |jones-dcmut.dat |
