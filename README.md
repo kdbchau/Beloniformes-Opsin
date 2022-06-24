@@ -366,7 +366,7 @@ Here were the best models for each opsin. Based on this, we need to specifiy the
 
 The outputs will produce several files, and every amino acid reconstructions will be shown in the ```rst``` file, for every branch in the tree. A snippet of how that looks:
 
-![]https://github.com/kdbchau/Beloniformes/blob/main/Images/AAreconstructions.png
+![](https://github.com/kdbchau/Beloniformes/blob/main/Images/AAreconstructions.png)
 
 Here, there will be shown the  branch the reconstructions are off (based on the input tree, this file will also give you an output tree at the top with branch labels for easier viewing in a program like TreeView or FigTree). Below the branch label are the amino acid positions, followed by the amino acid, its posterior probability and conservion to the next amino acid. If it is a terminal branch, the amino acid will not have a posterior probability because it is not "guessing" that amino acid (since it is the actual sequence).
 
