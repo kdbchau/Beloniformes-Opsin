@@ -19,11 +19,11 @@ Acknowledgements:
 
 # Table of Contents
 1. [Install software](#1-install-software)
-    * [Additional Software](#11-additional-software)
+    1.1. [Additional Software](#11-additional-software)
 2. [Quality Control](#2-quality-control)
 3. [Read Mapping](#3-read-mapping)
-    * [Round 1](#31-round-1)
-    * [Round 2+](#32-round-2)
+    3.1. [Round 1](#31-round-1)
+    3.2. [Round 2+](#32-round-2)
 4. [Phylogeny Reconstruction (Gene and Species)](#4-phylogeny-reconstruction-gene-and-species)
     * [MrBayes](#41-mrbayes)
     * [IQ-TREE](#42-iq-tree)
