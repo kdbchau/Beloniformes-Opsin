@@ -188,7 +188,7 @@ Then double click the MrBayes.exe and a terminal window should open up.
 ![](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes.png)
 
 Once executed, it will run for a while and then complete. The run was successful if met with convergence, noted by a plot produced at the end that looks randomized.
-In my case, it did have an upward trend but my [standard deviation values approached 0](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_StandardDeviations.png) and my [PSRF values were around 1](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_PSRF.png) - this is okay although this can be improved using a different burn-in, more runs, etc. The tree ends up looking the same as IQ-TREE so not a huge problem.
+In my case, it did have an upward trend but my standard deviation values approached 0 ![](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_StandardDeviations.png) and my PSRF values were around 1 ![](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_PSRF.png) - this is okay although this can be improved using a different burn-in, more runs, etc. The tree ends up looking the same as IQ-TREE so not a huge problem.
 
 ## 4.2. IQ-TREE
 
