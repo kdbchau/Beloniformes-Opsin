@@ -8,9 +8,17 @@ Authors:
 * [Frances E. Hauser](https://fehauser.wordpress.com/)
 * [Jacob M. Daane](https://www.daanelab.org/)
 * [Matthew P. Harris](http://www.fishbonelab.org/harris/Home.html)
-* [Belinda S. W. Chang](https://chang.eeb.utoronto.ca/)
-* [Nathan R. Lovejoy](http://www.utsc.utoronto.ca/~lovejoy/)
+* [Belinda S. W. Chang](https://chang.eeb.utoronto.ca/lab-members/belinda/)
+* [Nathan R. Lovejoy](https://scholar.google.ca/citations?user=kAzTYTsAAAAJ&hl=en)
 
+
+Acknowledgements:
+* [Erik Spence](https://www.linkedin.com/in/erik-spence-25229a31/?originalSubdomain=ca): for help with creation of scripts and optimizing performance on Niagara cluster
+* [SciNet](https://www.scinethpc.ca/) - Computations were performed on the [Niagara]() supercomputer at the SciNet HPC Consortium.
+    * [Marcelo Pone et. al (2019). Deploying a Top-100 Supercomputer for Large Parallel Workloads: The Niagara Supercomputer PEARC'19 Proceedings](https://dl.acm.org/doi/10.1145/3332186.3332195)
+    * [Chris Loken et al. (2010). SciNet: Lessons learned from Building a Power-efficient Top-20 System and Data Centre. J. Phys. Conf. Ser.](https://iopscience.iop.org/article/10.1088/1742-6596/256/1/012026)
+* [Lovejoy Lab](http://www.utsc.utoronto.ca/~lovejoy/) - For help with additional computations on the Lovejoy server
+* [Chang Lab](https://chang.eeb.utoronto.ca/) - Editing and help with analysis of codeml output and opsin evolution
 
 # Table of Contents
 1. [Install software](#1-install-software)
@@ -25,7 +33,7 @@ Authors:
 
 
 # 1. Install Software
-Software with a * next to the name were already available in the Niagara cluster from Compute Canada.
+Software with a * next to the name were already available in the Niagara cluster from Compute Canada. PAML was run on the Lovejoy server.
 
 1. [__FastQC*__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (version 0.11.8)
 2. [__Trimmomatic*__](http://www.usadellab.org/cms/?page=trimmomatic) (version 0.38)
@@ -150,6 +158,14 @@ python merge_seqs.py round1_MSA round3_MSA # where the second MSA called is the 
 After this, we will have our opsin MSAs to work with. But despite all this read mapping and refining, there are still regions in the MSA that are very gapped or have premature stop codons and need to be removed for effective codeml analysis.
 
 # 4. Cleaning Multiple Sequence Alignments
+Premature stop codons or highly gapped regions will hinder calculations in codeml from the PAML program. It is advised to remove all stop codons (the very end of a protein-coding sequence; TAA, TAG, or TGA codons) or you can manually delete positions that are highly gapped.
+
+To be as accurate as possible and keep things consistent between the 8 cone opsin MSAs, I use [alignment_editor.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/alignment_editor.py) which will do three things:
+1. Delete columns with a certain % of stop codons (premature stop codons from erroneous sequencing)
+2. Columns with premature stop codons that are not removed, will convert the stop codon into a gap ("---") (because codeml will not run otherwise).
+3. Delete columns with gaps exceeding a certain %.
+
+
 
 
 # 5. Phylogeny Reconstruction
