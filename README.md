@@ -222,7 +222,8 @@ To best determine when marine to freshwater transitions occurred within the Belo
 # 6. Species Tree
 To generate a species tree for the 38 beloniforms, we had obtained an alignment from the whole exome sequencing data that encompassed single-copy exons > 100bp, with at least 85% coverage in all species, concatenated. The total length of the alignment was 1,579,692 bases encompassing 8,768 exons. This alignment included the freshwater medaka but did not include the marine medaka. Because marine medaka is most closely related to the freshwater medaka, this was easy to manually add in as an outgroup.
 
-Using this tree, I ran MrBayes and IQ-TREE on the alignment (same process as above) to obtain my tree. The only difference here is MrBayes has a limit of 99,999 bases, so I trimmed the alignment down to 99,999 bases. Both methods produced identical topologies - resulting in one coherent ![species tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/Bel_0.85_species_tree.jpg). 
+Using this tree, I ran MrBayes and IQ-TREE on the alignment (same process as above) to obtain my tree. The only difference here is MrBayes has a limit of 99,999 bases, so I trimmed the alignment down to 99,999 bases. Both methods produced identical topologies - resulting in one coherent species tree. ![species tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/Bel_0.85_species_tree.jpg)
+
 Branch colouring is based of the ancestral habitat reconstruction using maximum likelihood.
 
 # 7. Cleaning Multiple Sequence Alignments
