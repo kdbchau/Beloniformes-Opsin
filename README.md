@@ -44,8 +44,11 @@ Software with a * next to the name were already available in the Niagara cluster
 5. [__IQTree__](http://www.iqtree.org/) (version 1.6.0)
 6. [__MrBayes__](http://nbisweden.github.io/MrBayes/) (version 3.2.6)
 7. [__BEAST__](https://beast.community/) (version 1.8.4)
-8. [__PAML__](http://abacus.gene.ucl.ac.uk/software/paml.html) (version 4)
-9. [__FigTree__](http://tree.bio.ed.ac.uk/software/figtree/)
+8. [__Tracer__](https://beast.community/tracer) (version 1.5)
+9. [__TreeAnnotator__](https://beast.community/treeannotator) (version 2.5.2 - part of BEAST package)
+10. [__Mesquite__](https://www.mesquiteproject.org/Installation.html) (version 3.51)
+11. [__PAML__](http://abacus.gene.ucl.ac.uk/software/paml.html) (version 4)
+12. [__FigTree__](http://tree.bio.ed.ac.uk/software/figtree/)
 
 ## 1.1. Additional Software
 This includes software that was used but not installed onto a cluster, rather, they are available online.
@@ -218,6 +221,29 @@ Both the Bayesian and maximum likelihood tree can be visualized using any tree v
 
 To best determine when marine to freshwater transitions occurred within the Beloniformes, using a larger tree is best for ancestral habitat reconstruction.
 [Bloom & Lovejoy 2017](https://devinbloom.files.wordpress.com/2017/08/bloom-lovejoy-2017-jbiogeography.pdf) had constructed a phylogeny for 104 beloniforms and 7 outgroup species using RAG1, RAG2, TMO-4C4, and CYTB genes. We obtained these sequences and I included TMO-4C4 for _Hemiramphodon pogonognathus_, and all four genes for _Rhynchorhamphus georgii_ and _Cheilopogon papilio_ which were missing. Our tree totalled 120 beloniforms and 7 outgroups.
+
+I followed the procedure for a maximum credibility phylogeny reconstruction using BEAST according to Bloom & Lovejoy 2017 paper, using the descriptions given in their supporting information.
+
+In brief:
+* A relaxed log-normal tree prior was used which allows rates to differ across brancches
+* A birth-death prior for variable speciation rates
+* I partitioned each gene using a general time reversible with gamma distribution (GTR + G)
+* Ran everything three times with MCMC length of 60,000,000 and 10% burn-in
+* I ran this with random starting seeds to allow random initial parameters.
+
+After the three runs, I used [Tracer 1.5](https://beast.community/tracer) to mix all three runs and verify convergence. Following this, [TreeAnnotator](https://beast.community/treeannotator) was used to generate a maximum credibility (MC) tree. This tree was used for ancestral habitat reconstruction.
+
+Then, using [Mesquite](https://www.mesquiteproject.org/home.html), I added habitat characters (i.e. freshwater or marine) for all 127 species in the MC tree. Habitat reconstruction was run using two methods:
+1. Maximum likelihood - MK1 model
+2. Maximum parsimony
+
+While habitat reconstruction was identical for majority of the species, it slightly differed for needlefishes. I opted to use only the maximum likelihood method because it corroborated past research that showed multiple individual transitions from marine to freshwater habitats. See [Lovejoy & Collette 2001 in _Copeia_](https://www.jstor.org/stable/1447878).
+
+Here is how the large Beloniformes tree looks under maximum likelihood habitat reconstruction, followed by a pruned version of the tree down to my 38 species.
+
+![large tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/LargeTreeBeloniformHabitat.png). For a higher resolution download image [here](https://github.com/kdbchau/Beloniformes/blob/main/Images/ML_bigtree_habitatreconstruction.pdf).
+
+![pruned tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/PrunedBeltree.png)
 
 # 6. Species Tree
 To generate a species tree for the 38 beloniforms, we had obtained an alignment from the whole exome sequencing data that encompassed single-copy exons >100bp, with at least 85% coverage in all species, concatenated. The total length of the alignment was 1,579,692 bases encompassing 8,768 exons. This alignment included the freshwater medaka but did not include the marine medaka. Because marine medaka is most closely related to the freshwater medaka, this was easy to manually add in as an outgroup.
