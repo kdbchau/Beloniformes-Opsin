@@ -260,7 +260,7 @@ To generate a species tree for the 38 beloniforms, we had obtained an alignment 
 
 Using this tree, I ran MrBayes and IQ-TREE on the alignment (same process as above) to obtain my tree. The only difference here is MrBayes has a limit of 99,999 bases, so I trimmed the alignment down to 99,999 bases. Both methods produced identical topologies - resulting in one coherent species tree. ![species tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/Bel_0.85_species_tree.jpg)
 
-Branch colouring is based of the ancestral habitat reconstruction using maximum likelihood.
+Branch colouring is based of the ancestral habitat reconstruction using maximum likelihood. Nodes on branches show bootstrap/Bayesian posterior probabilities. Scale represents number of substitutions per nucleotide.
 
 # 7. Cleaning Multiple Sequence Alignments
 Premature stop codons or highly gapped regions will hinder calculations in codeml from the PAML program. It is advised to remove all stop codons (the very end of a protein-coding sequence; TAA, TAG, or TGA codons) or you can manually delete positions that are highly gapped.
