@@ -111,7 +111,8 @@ We will also later integrate the marine medaka (_Oryzias melastigma_) sequences 
 
 ## 3.1. Round 1
 
-In the very first round of read mapping, use the protein-coding opsin sequence from freshwater medaka. I used [mapping.sh](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/mapping.sh). This was run on the Niagara cluster from ComputeCanada. BWA is used as the mapping software. 
+In the very first round of read mapping, use the protein-coding opsin sequence from freshwater medaka. I used [mapping.sh](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/mapping.sh). This was run on the Niagara cluster from ComputeCanada. BWA is used as the mapping software.
+See BWA paper by [Heng Li, 2013 _arXiv_](https://arxiv.org/pdf/1303.3997.pdf). 
 
 However, upon trial and error it was found that because of high sequence similarity in the LWS opsins (see this [paper](https://www.nature.com/articles/s41598-019-39978-6)), and in the RH2 opsins for the medakas, I used zebrafish (_Danio rerio_) LWS and guppy RH2 (_Poecilia reticulata_) opsins in the first round of read mapping.
 
