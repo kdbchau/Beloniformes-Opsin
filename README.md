@@ -250,7 +250,7 @@ For a higher resolution download image [here](https://github.com/kdbchau/Belonif
 
 ![pruned tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/PrunedBeltree.png)
 
-Using the pruned tree and literature research, reconstructing diet was easier as we based it off each family. Needlefishes are primarily piscivorous (except for _Belonion dibranchodon_ and _Potamorrhaphis guianensis_), flyingfishes and sauries feed on zooplankton, halfbeaks are herbivorous feeding on plants and algae. Medakas and the two non-piscivorous needlefishes feed on insects, algae or other small taxa like zooplankton, so they are classified as generalists. 
+Using the pruned tree and literature research, reconstructing diet was easier as we based it off each family. Needlefishes are primarily piscivorous (except for _Belonion dibranchodon_ and _Potamorrhaphis guianensis_), flyingfishes and sauries feed on zooplankton, halfbeaks are herbivorous feeding on plants and algae. Medakas, viviparous halfbeaks, and the two non-piscivorous needlefishes feed on insects, algae or other small taxa like zooplankton, so they are classified as generalists. 
 
 Below is the figure showing both habitat and diet transitions for the 38 Beloniformes.
 ![diet and habitat beloniformes](https://github.com/kdbchau/Beloniformes/blob/main/Images/Habitat_Diet_Transitions_Big_2022.jpg)
@@ -323,6 +323,8 @@ In this case, five different labelings were used. The fifth one includes multipl
 4. Foreground = herbivores, background = remaining beloniforms
 5. Foreground 1 = piscivores, foreground 2 = herbivores, foreground 3 = zooplanktivores, background = generalists.
 
+![partitions](https://github.com/kdbchau/Beloniformes/blob/main/Images/Partitions_Clean_3Diet.jpg)
+
 Because we are comparing many different scenerios, we also implemented Akaike Information Criterion ([AIC](https://ieeexplore.ieee.org/document/1100705)). Models with ΔAIC < 2 are deemed the most likely to explain the observed patterns of selection for each cone opsin.
 
 To calculate ΔAIC, the following was used from parameters obtained in CODEML output files (log file names are specified in codeml.ctl).
@@ -331,7 +333,7 @@ $AIC = (-2 * lnL) + (2 * np)$
 
 For example looking at one cone opsin, once AIC is calculated for each of the 5 models, the model with the lowest AIC is identified as the best fit model, and we use its AIC value to see if any other models have ΔAIC < 2. Simply take the AIC value for a model and subtract it from the model with the lowest AIC (this means the best fit model will automatically have ΔAIC = 0).
 
-Here is an example of my CmC model output and values (image below).
+Here is an example of my CmC model output and values for SWS1 (image below).
 
 ![CmC for SWS1](https://github.com/kdbchau/Beloniformes/blob/main/Images/CmCAIC.png).
 
