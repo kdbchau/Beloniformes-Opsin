@@ -30,6 +30,10 @@ Acknowledgements:
 5. [Ancestral Habitat and Diet Reconstruction [BEAST]](#5-ancestral-habitat-and-diet-reconstruction-beast)
 6. [Species Tree](#6-species-tree)
 7. [Cleaning Multiple Sequence Alignments](#7-cleaning-multiple-sequence-alignments)
+8. [PAML](#8-paml)
+    * [Random Sites](#81-random-sites)
+    * [Clade and Branch Models](#82-clade-and-branch-models)
+    * [Ancestral Amino Acid Reconstruction](#83-ancestral-amino-acid-reconstruction)
 
 # 1. Install Software
 Software with a * next to the name were already available in the Niagara cluster from Compute Canada. PAML was run on the Lovejoy server.
@@ -281,3 +285,9 @@ Eight files are moved into a new folder with the opsin name as the folder name a
 |6 |__output_msa\_####\_RemovedGaps.txt__ | rh2a_msa_1030_RemovedGaps.txt|Textfile of codon positions with removed gaps |
 |7 |__output_msa\_####\_RemovedStops.txt__ |rh2a_msa_1030_RemovedStops.txt | Textfile of codon positions with removed stops|
 |8 | __output_msa\_####\_STATS.txt__|rh2a_msa_1030_STATS.txt | Overall stats of the cleanup, shows how many total bases removed, most common codon in remaining msa, etc.|
+
+# 8. PAML
+
+## 8.1. Random Sites
+## 8.2. Clade and Branch Models
+## 8.3. Ancestral Amino Acid Reconstruction
