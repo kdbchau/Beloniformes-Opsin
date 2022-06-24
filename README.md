@@ -1,7 +1,7 @@
 # Multiple Ecological Axes Drive Cone Opsin Evolution in Beloniformes
 This pipeline focuses on the extraction of cone opsin sequences from whole exome sequence data of fishes. It will also focus on multiple sequence alignment using both reference and makeshift reference sequences, cleaning up the multiple sequence alignments, and testing for changes in selection patterns with CODEML from the PAML program. Additional scripts and software are shown for phylogeny reconstruction and ancestral amino acid reconstruction.
 
-This project was conducted at the [University of Toronto Scarborough](https://www.utsc.utoronto.ca/home/) in the [Lovejoy Lab](http://www.utsc.utoronto.ca/~lovejoy/).
+This project was conducted at the [University of Toronto Scarborough](https://www.utsc.utoronto.ca/home/) in the [Lovejoy Lab](http://www.utsc.utoronto.ca/~lovejoy/) and supported by the [Chang Lab](https://chang.eeb.utoronto.ca/) from the [University of Toronto St. George](https://www.utoronto.ca/university-life/campuses/st-george), and the [Harris Laboratory](http://www.fishbonelab.org/harris/Home.html) from [Harvard Medical School](https://genetics.hms.harvard.edu/).
 
 Authors:
 * Katherine D. Chau (me)
