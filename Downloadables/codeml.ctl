@@ -1,6 +1,6 @@
       seqfile = lwsa_FW_k1o05_1030.phy	 ** sequence data filename
      treefile = bel_38_FW.phy	 ** tree structure file name
-      outfile = lwsa_FW_k1o05_1030_half_OUT	 ** main result file name
+      outfile = lwsa_FW_k1o05_1030_OUTPUT	 ** main result file name
 
         noisy = 9  * 0,1,2,3,9: how much rubbish on the screen
       verbose = 0  * 0: concise; 1: detailed, 2: too much
