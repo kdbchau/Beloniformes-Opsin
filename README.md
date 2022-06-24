@@ -351,9 +351,9 @@ iqtree -s lwsa_msa_1030.fa -st NT2AA -m TEST -AIC -nt 1  #
 
 This will produce a log file output that will show testing for all the models. At the bottom there will be several output for different algorithms deciding the best amino acid model. We use AIC.
 
-Here were the best models for each opsin. Based on this, we need to specifiy the approprate dat file in the codeml.ctl file for ancestral amino acid reconstruction. Here is an example of a codeml.ctl file for [amino acid reconstruction] and changing ```aaRatefile``` variable to call the appropriate amino acid model saved in the codeml bin folder.
+Here were the best models for each opsin. Based on this, we need to specifiy the approprate dat file in the codeml.ctl file for ancestral amino acid reconstruction. Here is an example of a codeml.ctl file for [amino acid reconstruction]() and changing ```aaRatefile``` variable to call the appropriate amino acid model saved in the codeml bin folder.
 
-|Opsin|AIC Model| aaRatefile model|
+|Opsin|AIC Model| aaRatefile .dat file|
 |---|---|---|
 | LWSA | LG+F+I+G4  | lg.dat |
 | LWSB | LG+F+I+G4  |lg.dat |
@@ -363,3 +363,24 @@ Here were the best models for each opsin. Based on this, we need to specifiy the
 | SWS2A |LG+F+I+G4  |lg.dat |
 | SWS2B |JTT+F+I+G4  |jones.dat |
 | SWS1 |JTTDCMut+F+I+G4  |jones-dcmut.dat |
+
+The outputs will produce several files, and every amino acid reconstructions will be shown in the ```rst``` file, for every branch in the tree. A snippet of how that looks:
+
+![]https://github.com/kdbchau/Beloniformes/blob/main/Images/AAreconstructions.png
+
+Here, there will be shown the  branch the reconstructions are off (based on the input tree, this file will also give you an output tree at the top with branch labels for easier viewing in a program like TreeView or FigTree). Below the branch label are the amino acid positions, followed by the amino acid, its posterior probability and conservion to the next amino acid. If it is a terminal branch, the amino acid will not have a posterior probability because it is not "guessing" that amino acid (since it is the actual sequence).
+
+In the figure above, we see that branch 34 (nodes 55 to 56) have several amino acid reconstructions that have posterior probablities all above 80%. However, we are only interested in the codon positions that were identified to be under positive selection according to M8, FUBAR, and CmC models.
+
+In CODEML M8 output, this can be found in the output file with Bayes' Empircal Bayes (BEB) values shown after scrolling to the M8 model. It will look like this:
+
+![](https://github.com/kdbchau/Beloniformes/blob/main/Images/BEB_m8.png)
+
+Where the first column is the codon position according to the first species sequence (which was _2-Ablennes hians_). The second column is the codon, third is posterior probablitity that that codon is under positive selection. Next column is the omega (dN/dS) ratio +- the standard deviation. Those with ** or * are codons under significant positive selection.
+
+This is compared against FUBAR output which is downloaded off the server. Finally, CmC also outputs BEB values for every codon position in the ```rst``` file, with similar posterior probabilties and omega values. If there is a codon that is identified as under significant positive selection from all three methods, it is very likely to be experiecing positive selection.
+
+Those sites are focused on the ancestral amino acid reconstructions. For example if I know that codon at position 217 is under positive selection, in the figure above I see that codon 217 (branch 34) transitioned from V to A and I can mark that on a tree. I can find all instances where amino acid 217 shows up in this output and see how the amino acids evolved along the branches.
+
+### Thank you!
+For the full analyis and results of this project see our [paper]().
