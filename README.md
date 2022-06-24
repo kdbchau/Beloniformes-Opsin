@@ -15,7 +15,7 @@ Authors:
 Acknowledgements:
 * [Erik Spence](https://www.linkedin.com/in/erik-spence-25229a31/?originalSubdomain=ca): for help with creation of scripts and optimizing performance on Niagara cluster
 * [SciNet](https://www.scinethpc.ca/) - Computations were performed on the [Niagara]() supercomputer at the SciNet HPC Consortium.
-    * [Marcelo Pone et. al (2019). Deploying a Top-100 Supercomputer for Large Parallel Workloads: The Niagara Supercomputer PEARC'19 Proceedings](https://dl.acm.org/doi/10.1145/3332186.3332195)
+    * [Marcelo Ponce et. al (2019). Deploying a Top-100 Supercomputer for Large Parallel Workloads: The Niagara Supercomputer PEARC'19 Proceedings](https://dl.acm.org/doi/10.1145/3332186.3332195)
     * [Chris Loken et al. (2010). SciNet: Lessons learned from Building a Power-efficient Top-20 System and Data Centre. J. Phys. Conf. Ser.](https://iopscience.iop.org/article/10.1088/1742-6596/256/1/012026)
 * [Lovejoy Lab](http://www.utsc.utoronto.ca/~lovejoy/) - For help with additional computations on the Lovejoy server
 * [Chang Lab](https://chang.eeb.utoronto.ca/) - Editing and help with analysis of codeml output and opsin evolution
@@ -165,8 +165,20 @@ To be as accurate as possible and keep things consistent between the 8 cone opsi
 2. Columns with premature stop codons that are not removed, will convert the stop codon into a gap ("---") (because codeml will not run otherwise).
 3. Delete columns with gaps exceeding a certain %.
 
+For this work, we delete codon positions that have 10%+ stop codons present, and 30%+ gaps (including incomplete codons such as AT-, A--).
 
+To run this script:
 
+```
+python alignment_editor.py input_msa.fa 0.1 0.3 output_msa.fa # if using 10% stops and 30% gaps removal
+```
+
+Seven output files are produced in a new folder:
+1. input_msa.fa (i.e. rh2a_msa.fa)
+2. output_msa_####.fa (i.e. rh2a_msa_1030.fa); 10 for 10% and 30 for 30%).
+3. output_msa_####.phy (Phylip version of the output_msa.fa)'
+4. output_msa\_####\_RemovedAttributes.xlsx
+5. 
 
 # 5. Phylogeny Reconstruction
 # 6. Ancestral Habitat and Diet Reconstruction
