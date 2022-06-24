@@ -6,7 +6,7 @@ and edits remaining stop codons (potential errors) into gaps. It
 also creates a new fasta MSA and corresponding phylip (.phy) file, and output stats.
 
 Run this script in terminal after cd into the directory with the input_msa.fa file:
-> python alignment_editor_clean.py input_msa.fa stopfrac1 gapfrac2 output_msa.fa
+> python alignment_editor.py input_msa.fa stopfrac1 gapfrac2 output_msa.fa
 
 This script was created with the help of Dr. Erik Spence from the SciNet HPC Consortium."""
 
@@ -248,5 +248,5 @@ write_stat_files(df_gaps, df_stops, df_change, outputfile)
 # DONE!
 ## To turn in terminal, be in the directory with the fasta file and type. For example, to edit an ALIGNED and already in reading frame MSA 
 ## with parameters of 40% (frac1) stops and 30% (frac2) gaps the following is executed in terminal:
-## python alignment_editor_clean.py inputfilename.fa 0.4 0.3 outputfilename.fa
+## python alignment_editor.py inputfilename.fa 0.1 0.3 outputfilename.fa
 ## Once completed, 7 new files are created
