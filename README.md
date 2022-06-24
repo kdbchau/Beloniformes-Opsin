@@ -240,7 +240,8 @@ While habitat reconstruction was identical for majority of the species, it sligh
 
 Here is how the large Beloniformes tree looks under maximum likelihood habitat reconstruction, followed by a pruned version of the tree down to my 38 species.
 
-![large tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/LargeTreeBeloniformHabitat.png). For a higher resolution download image [here](https://github.com/kdbchau/Beloniformes/blob/main/Images/ML_bigtree_habitatreconstruction.pdf).
+![large tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/LargeTreeBeloniformHabitat.png)
+For a higher resolution download image [here](https://github.com/kdbchau/Beloniformes/blob/main/Images/ML_bigtree_habitatreconstruction.pdf)
 
 ![pruned tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/PrunedBeltree.png)
 
