@@ -248,7 +248,7 @@ Here is how the large Beloniformes tree looks under maximum likelihood habitat r
 
 For a higher resolution download image [here](https://github.com/kdbchau/Beloniformes/blob/main/Images/ML_bigtree_habitatreconstruction.pdf)
 
-![pruned tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/PrunedBeltree.png)
+![pruned tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/Pruned_BelTree_ML.jpg)
 
 Using the pruned tree and literature research, reconstructing diet was easier as we based it off each family. Needlefishes are primarily piscivorous (except for _Belonion dibranchodon_ and _Potamorrhaphis guianensis_), flyingfishes and sauries feed on zooplankton, halfbeaks are herbivorous feeding on plants and algae. Medakas, viviparous halfbeaks, and the two non-piscivorous needlefishes feed on insects, algae or other small taxa like zooplankton, so they are classified as generalists. 
 
