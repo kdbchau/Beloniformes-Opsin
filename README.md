@@ -30,7 +30,7 @@ Acknowledgements:
 4. [Phylogeny Reconstruction](#4-phylogeny-reconstruction)
     * [MrBayes](#41-mrbayes)
     * [IQ-TREE](#42-iq-tree)
-5. [Ancestral Habitat and Diet Reconstruction](#6-ancestral-habitat-and-diet-reconstruction)
+5. [Ancestral Habitat and Diet Reconstruction [BEAST]](#6-ancestral-habitat-and-diet-reconstruction-beast)
 6. [Cleaning Multiple Sequence Alignments](#5-cleaning-multiple-sequence-alignments)
 
 
@@ -206,7 +206,12 @@ The output ```.contree``` will have the node bootstrap values.
 
 Both the Bayesian and maximum likelihood tree can be visualized using any tree visualizing program like FigTree. Here are the figures for the [Beloniformes Bayesian Cone Opsins Tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_AllConeOpsins.nexus.con.tre.pdf) and the [Beloniformes Maximum Likelihood Cone Opsins Tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/IQTREE_AllOpsinsCombined_noRH1.fa.contree.pdf).
 
-# 5. Ancestral Habitat and Diet Reconstruction
+# 5. Ancestral Habitat and Diet Reconstruction [BEAST]
+
+To best determine when marine to freshwater transitions occurred within the Beloniformes, using a larger tree is best for ancestral habitat reconstruction.
+[Bloom & Lovejoy 2017](https://devinbloom.files.wordpress.com/2017/08/bloom-lovejoy-2017-jbiogeography.pdf) had constructed a phylogeny for 104 beloniforms and 7 outgroup species using RAG1, RAG2, TMO-4C4, and CYTB genes. We obtained these sequences and I included TMO-4C4 for _Hemiramphodon pogonognathus_, and all four genes for _Rhynchorhamphus georgii_ and _Cheilopogon papilio_ which were missing. Our tree totalled 120 beloniforms and 7 outgroups.
+
+
 
 # 6. Cleaning Multiple Sequence Alignments
 Premature stop codons or highly gapped regions will hinder calculations in codeml from the PAML program. It is advised to remove all stop codons (the very end of a protein-coding sequence; TAA, TAG, or TGA codons) or you can manually delete positions that are highly gapped.
@@ -236,5 +241,3 @@ Eight files are moved into a new folder with the opsin name as the folder name a
 |6 |__output_msa\_####\_RemovedGaps.txt__ | rh2a_msa_1030_RemovedGaps.txt|Textfile of codon positions with removed gaps |
 |7 |__output_msa\_####\_RemovedStops.txt__ |rh2a_msa_1030_RemovedStops.txt | Textfile of codon positions with removed stops|
 |8 | __output_msa\_####\_STATS.txt__|rh2a_msa_1030_STATS.txt | Overall stats of the cleanup, shows how many total bases removed, most common codon in remaining msa, etc.|
-
-# 7. Testing +-+
