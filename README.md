@@ -91,7 +91,7 @@ Freshwater medaka have 8 cone opsin sequences readily available on [Genbank](htt
 | blue opsin 2 | SWS2B | [AB223057](https://www.ncbi.nlm.nih.gov/nuccore/AB223057) |
 | ultraviolet opsin | SWS1 | [AB223058](https://www.ncbi.nlm.nih.gov/nuccore/AB223058) |
 
-The opsin sequence names and wavelengths discussed in the paper were obtained from [Matusomoto et al. 2006 Gene paper](https://www.sciencedirect.com/science/article/abs/pii/S0378111905007456?via%3Dihub). See image below.
+The opsin sequence names and wavelengths discussed in the paper were obtained from [Matsumoto et al. 2006 _Gene_ paper](https://www.sciencedirect.com/science/article/abs/pii/S0378111905007456?via%3Dihub). See image below.
 
 ![medaka opsins](https://github.com/kdbchau/Beloniformes/blob/main/Images/medaka_wavelengths.png).
 
