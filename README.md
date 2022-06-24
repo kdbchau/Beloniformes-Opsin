@@ -26,10 +26,10 @@ Acknowledgements:
 2. [Quality Control](#2-quality-control)
 3. [Read Mapping](#3-read-mapping)
     * [Round 1](#31-round-1)
-    * [Round 2+](#32-round-2\+)
+    * [Round 2+](#32-round-2+)
 4. [Phylogeny Reconstruction](#4-phylogeny-reconstruction)
     * [MrBayes](#41-mrbayes)
-    * [IQ-TREE](#42-iqtree)
+    * [IQ-TREE](#42-iq-tree)
 5. [Ancestral Habitat and Diet Reconstruction](#6-ancestral-habitat-and-diet-reconstruction)
 6. [Cleaning Multiple Sequence Alignments](#5-cleaning-multiple-sequence-alignments)
 
