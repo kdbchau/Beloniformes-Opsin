@@ -237,3 +237,4 @@ Eight files are moved into a new folder with the opsin name as the folder name a
 |7 |__output_msa\_####\_RemovedStops.txt__ |rh2a_msa_1030_RemovedStops.txt | Textfile of codon positions with removed stops|
 |8 | __output_msa\_####\_STATS.txt__|rh2a_msa_1030_STATS.txt | Overall stats of the cleanup, shows how many total bases removed, most common codon in remaining msa, etc.|
 
+# 7. Testing +-+
