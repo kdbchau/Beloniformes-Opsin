@@ -136,11 +136,11 @@ The second and subsequent rounds use these makeshift sequences that are filled i
 To identify the next top beloniform, we used the [ideal_species.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/ideal_species.py) script. But this might not come out sorted properly so we run it the following way in terminal:
 
 ```
-# name is the name of the file you are running without its extension, for example if it was rh2a_medaka_MSA.fa
+# name is the name of the file running without its extension, for example if it was rh2a_medaka_MSA.fa
 name="rh2a_medaka_MSA" && python ideal_species.py ${name}.fa > ${name}.txt && cat ${name}.txt | sort -nr -k2 -o ${name}.txt
 ```
 
-A textfile will be created with the species in the first column, sorted by the number of codons in the second column. Medakas are usually always the first two, followed by the beloniform with the next most complete sequence. Then using that beloniform's sequence, you can then fill in its gaps with either the medaka sequence or a different nucleotide/amino acid from another beloniform. Typically this is the best approach, as refilling in the gaps with medaka bases doesn't pull out more information. Rather, fill it with bases from the seccond most complete beloniform, or in some cases, if a paritcular family (e.g. all the flyingfishes) are missing codons in an area, fill the gaps with their bases to try and pull out more of their sequences in the next round mapping.
+A textfile will be created with the species in the first column, sorted by the number of codons in the second column. Medakas are usually always the first two, followed by the beloniform with the next most complete sequence. Then using that beloniform's sequence, manually fill in its gaps with either the medaka sequence or a different nucleotide/amino acid from another beloniform. Typically this is the best approach, as refilling in the gaps with medaka bases doesn't pull out more information. Rather, fill it with bases from the seccond most complete beloniform, or in some cases, if a paritcular family (e.g. all the flyingfishes) are missing codons in an area, fill the gaps with their bases to try and pull out more of their sequences in the next round mapping.
 
 In my study, this is how many round mappings were needed to obtain opsin MSAs that were fairly complete:
 
@@ -173,7 +173,7 @@ In both cases, all cone opsin MSAs were combined into one file and aligned as tr
 
 For the aligned fasta file of cone opsins combined, download file [here](https://github.com/kdbchau/Beloniformes/blob/main/Downloadables/combined_cone_opsins.fa).
 
-You can also use programs like [AliView](https://ormbunkar.se/aliview/)) to convert the aligned MSA into Phylip foramt, which is needed for MrBayes and IQ-TREE (but IQ-TREE can use a fasta format as well).
+Programs like [AliView](https://ormbunkar.se/aliview/)) was used to convert the aligned MSA into Phylip foramt, which is needed for MrBayes and IQ-TREE (but IQ-TREE can use a fasta format as well).
 
 ## 4.1. MrBayes
 To run MrBayes, a nexus file must be created. Templates can be found [here](https://github.com/NBISweden/MrBayes/tree/v3.2.7a/examples). 
@@ -264,9 +264,9 @@ Using this tree, I ran MrBayes and IQ-TREE on the alignment (same process as abo
 Branch colouring is based of the ancestral habitat reconstruction using maximum likelihood. Nodes on branches show bootstrap/Bayesian posterior probabilities. Scale represents number of substitutions per nucleotide.
 
 # 7. Cleaning Multiple Sequence Alignments
-Premature stop codons or highly gapped regions will hinder calculations in codeml from the PAML program. It is advised to remove all stop codons (the very end of a protein-coding sequence; TAA, TAG, or TGA codons) or you can manually delete positions that are highly gapped.
+Premature stop codons or highly gapped regions will hinder calculations in codeml from the PAML program. It is advised to remove all stop codons (the very end of a protein-coding sequence; TAA, TAG, or TGA codons) or manually delete positions that are highly gapped.
 
-To be as accurate as possible and keep things consistent between the 8 cone opsin MSAs, I use [alignment_editor.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/alignment_editor.py) which will do three things:
+To be as accurate as possible and keep things consistent between the 8 cone opsin MSAs, use[alignment_editor.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/alignment_editor.py) which will do three things:
 1. Delete columns with a certain % of stop codons (premature stop codons from erroneous sequencing)
 2. Columns with premature stop codons that are not removed, will convert the stop codon into a gap ("---") (because codeml will not run otherwise).
 3. Delete columns with gaps exceeding a certain %.
@@ -306,7 +306,7 @@ Note: All CODEML analyses were run three times using different starting kappa an
 ## 8.1. Random-Sites and FUBAR
 Random-sites models (M0, M1a, M2a, M3, M7, M8, and M8a) was used to assess positive selection for each group. Our data has five groups being assessed. Species belonging to each group were extracted from each cone opsin and run individually. For example, out of 38  beloniforms, 10 are freshwater and 28 are marine - so each cone opsin was split into two MSAs (each with their own mini newick tree file) for freshwater and marine. 
 
-There was an alignment and tree (generated in Mesquite which allows you to remove taxa and recreate the tree) for: freshwater, marine, piscivores, zooplanktivores, and herbivores.
+There was an alignment and tree (generated in Mesquite which allows one to remove taxa and recreate the tree) for: freshwater, marine, piscivores, zooplanktivores, and herbivores.
 
 Positive selection is determined when M2a vs. M1a is significant, M8 vs. M7 was significant, as well as M8 vs. M8a was significant. For a full explanation on testing positive selection using these models, see [Yang 2007](https://academic.oup.com/mbe/article/24/8/1586/1103731). Model M3 vs. M0 just assesses variation for three site classes.
 
@@ -368,7 +368,7 @@ The outputs will produce several files, and every amino acid reconstructions wil
 
 ![](https://github.com/kdbchau/Beloniformes/blob/main/Images/AAreconstructions.png)
 
-Here, there will be shown the  branch the reconstructions are off (based on the input tree, this file will also give you an output tree at the top with branch labels for easier viewing in a program like TreeView or FigTree). Below the branch label are the amino acid positions, followed by the amino acid, its posterior probability and conservion to the next amino acid. If it is a terminal branch, the amino acid will not have a posterior probability because it is not "guessing" that amino acid (since it is the actual sequence).
+Here, there will be shown the  branch the reconstructions are off (based on the input tree, this file will also give an output tree at the top with branch labels for easier viewing in a program like TreeView or FigTree). Below the branch label are the amino acid positions, followed by the amino acid, its posterior probability and conservion to the next amino acid. If it is a terminal branch, the amino acid will not have a posterior probability because it is not "guessing" that amino acid (since it is the actual sequence).
 
 In the figure above, we see that branch 34 (nodes 55 to 56) have several amino acid reconstructions that have posterior probablities all above 80%. However, we are only interested in the codon positions that were identified to be under positive selection according to M8, FUBAR, and CmC models.
 
