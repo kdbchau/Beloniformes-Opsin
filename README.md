@@ -24,7 +24,7 @@ Acknowledgements:
 3. [Read Mapping](#3-read-mapping)
     * [3.1. Round 1](#31-round-1)
     * [3.2. Round 2+](#32-round-2)
-4. [Phylogeny Reconstruction (Gene and Species)](#4-phylogeny-reconstruction-gene-and-species)
+4. [Phylogeny Reconstruction (Gene Trees)](#4-phylogeny-reconstruction-gene-trees)
     * [4.1. MrBayes](#41-mrbayes)
     * [4.2. IQ-TREE](#42-iq-tree)
 5. [Ancestral Habitat and Diet Reconstruction [BEAST]](#5-ancestral-habitat-and-diet-reconstruction-beast)
@@ -165,7 +165,7 @@ python merge_seqs.py round1_MSA round3_MSA # where the second MSA called is the 
 
 After this, we will have our opsin MSAs to work with. But despite all this read mapping and refining, there are still regions in the MSA that are very gapped or have premature stop codons and need to be removed for effective codeml analysis.
 
-# 4. Phylogeny Reconstruction [Gene and Species]
+# 4. Phylogeny Reconstruction [Gene Trees]
 
 Using the full MSAs (prior to cleaning), we can construct our phylogenys. I used IQTREE for a maximum likelihood reconstruction and MrBayes for a Bayesion reconstruction.
 
@@ -220,6 +220,8 @@ The output ```.contree``` will have the node bootstrap values.
 
 Both the Bayesian and maximum likelihood tree can be visualized using any tree visualizing program like FigTree. Here are the figures for the Beloniformes [Bayesian cone opsin tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_AllConeOpsins.nexus.con.tre.pdf) 
 and the [maximum likelihood cone opsin tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/IQTREE_AllOpsinsCombined_noRH1.fa.contree.pdf).
+
+### For species tree construction, see [section 6](#6-species-tree).
 
 # 5. Ancestral Habitat and Diet Reconstruction [BEAST]
 
