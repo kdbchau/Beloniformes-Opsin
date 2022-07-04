@@ -167,9 +167,11 @@ After this, we will have our opsin MSAs to work with. But despite all this read 
 
 # 4. Phylogeny Reconstruction [Gene Trees]
 
-Using the full MSAs (prior to cleaning), we can construct our phylogenys. I used IQTREE for a maximum likelihood reconstruction and MrBayes for a Bayesion reconstruction.
+### _For species tree construction, see [section 6](#6-species-tree)._
 
-In both cases, all cone opsin MSAs were combined into one file and aligned as translated amino acids using MUSCLE alignment (use any program for this - I used [AliView](https://ormbunkar.se/aliview/)), and include some outgroup species for better root determination. I included the zebrafish and guppy opsin reference sequences I used for round 1 mapping.
+Using the full MSAs (prior to cleaning), we can construct our gene tree phylogenies. I used IQTREE for a maximum likelihood reconstruction and MrBayes for a Bayesion reconstruction.
+
+In both cases, all cone opsin MSAs were combined into one file and aligned as translated amino acids using MUSCLE alignment (use any program for this - I used [AliView](https://ormbunkar.se/aliview/)), and I included a few outgroup species for better root determination. I included the zebrafish and guppy opsin reference sequences I used for round 1 mapping.
 
 For the aligned fasta file of cone opsins combined, download file [here](https://github.com/kdbchau/Beloniformes/blob/main/Downloadables/combined_cone_opsins.fa).
 
@@ -221,7 +223,6 @@ The output ```.contree``` will have the node bootstrap values.
 Both the Bayesian and maximum likelihood tree can be visualized using any tree visualizing program like FigTree. Here are the figures for the Beloniformes [Bayesian cone opsin tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_AllConeOpsins.nexus.con.tre.pdf) 
 and the [maximum likelihood cone opsin tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/IQTREE_AllOpsinsCombined_noRH1.fa.contree.pdf).
 
-### _For species tree construction, see [section 6](#6-species-tree)._
 
 # 5. Ancestral Habitat and Diet Reconstruction [BEAST]
 
