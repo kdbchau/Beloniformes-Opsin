@@ -221,7 +221,7 @@ The output ```.contree``` will have the node bootstrap values.
 Both the Bayesian and maximum likelihood tree can be visualized using any tree visualizing program like FigTree. Here are the figures for the Beloniformes [Bayesian cone opsin tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/MrBayes_AllConeOpsins.nexus.con.tre.pdf) 
 and the [maximum likelihood cone opsin tree](https://github.com/kdbchau/Beloniformes/blob/main/Images/IQTREE_AllOpsinsCombined_noRH1.fa.contree.pdf).
 
-### For species tree construction, see [section 6](#6-species-tree).
+### _For species tree construction, see [section 6](#6-species-tree)._
 
 # 5. Ancestral Habitat and Diet Reconstruction [BEAST]
 
