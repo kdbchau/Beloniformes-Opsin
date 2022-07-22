@@ -195,7 +195,7 @@ def write_stats(filename):
 		f.write("\nLength of original alignment is: \n%d bases (%d columns) with %d species." '\n' \
                 % (original_alignment_bases, original_alignment_columns, number_of_species))
 		
-		f.write("\nThe number of columns that had stop codons present in less than %d%% and changed to gaps occurred in %d columns." '\n' % (frac1*100, 	change_alignment_columns))
+		f.write("\nThe number of columns that had stop codons present in less than %d%% and changed to gaps occurred in %d columns." '\n' % (frac1*100, change_alignment_columns))
 				
 		f.write("\nRemoved columns with more than %d%% stop codons (TAA,TGA,TAG) present. Otherwise gaps used to replace stop codons." '\n' % (frac1*100))
 		
