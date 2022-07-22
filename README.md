@@ -269,7 +269,7 @@ Branch colouring is based of the ancestral habitat reconstruction using maximum 
 # 7. Cleaning Multiple Sequence Alignments
 Premature stop codons or highly gapped regions will hinder calculations in codeml from the PAML program. It is advised to remove all stop codons (the very end of a protein-coding sequence; TAA, TAG, or TGA codons) or manually delete positions that are highly gapped.
 
-To be as accurate as possible and keep things consistent between the 8 cone opsin MSAs, use[alignment_editor.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/alignment_editor.py) which will do three things:
+To be as accurate as possible and keep things consistent between the 8 cone opsin MSAs, use [alignment_editor.py](https://github.com/kdbchau/Beloniformes/blob/main/Scripts/alignment_editor.py) which will do three things:
 1. Delete columns with a certain % of stop codons (premature stop codons from erroneous sequencing)
 2. Columns with premature stop codons that are not removed, will convert the stop codon into a gap ("---") (because codeml will not run otherwise).
 3. Delete columns with gaps exceeding a certain %.
