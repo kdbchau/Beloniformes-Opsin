@@ -246,7 +246,7 @@ write_stat_files(df_gaps, df_stops, df_change, outputfile)
 ##########################################################################################################
 
 # DONE!
-## To turn in terminal, be in the directory with the fasta file and type. For example, to edit an ALIGNED and already in reading frame MSA 
-## with parameters of 40% (frac1) stops and 30% (frac2) gaps the following is executed in terminal:
+## To run in terminal, be in the directory with the fasta file and execute this script. For example, to edit an ALIGNED and already in reading frame MSA, 
+## with parameters of 10% (frac1) stops and 30% (frac2) gaps the following is executed in terminal:
 ## python alignment_editor.py inputfilename.fa 0.1 0.3 outputfilename.fa
 ## Once completed, 7 new files are created
