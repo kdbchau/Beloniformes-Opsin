@@ -52,7 +52,7 @@ Software with a * next to the name were already available in the Niagara cluster
 12. [__FigTree__](http://tree.bio.ed.ac.uk/software/figtree/)
 
 ## 1.1. Additional Software
-This includes software that was used but not installed onto a cluster, rather, they are available online.
+This includes software that was used but not installed onto a cluster or personal computer, rather, they are available online.
 
 A fast, unconstrained Bayesian approximation for inferring selection ([FUBAR](http://www.datamonkey.org/fubar)) was conducted using the [Datamonkey Server](http://www.datamonkey.org/).
 
