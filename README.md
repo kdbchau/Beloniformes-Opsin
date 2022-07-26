@@ -371,7 +371,7 @@ The outputs will produce several files, and every amino acid reconstructions wil
 
 ![](https://github.com/kdbchau/Beloniformes/blob/main/Images/AAreconstructions.png)
 
-Here, there will be shown the  branch the reconstructions are off (based on the input tree, this file will also give an output tree at the top with branch labels for easier viewing in a program like TreeView or FigTree). Below the branch label are the amino acid positions, followed by the amino acid, its posterior probability and conservion to the next amino acid. If it is a terminal branch, the amino acid will not have a posterior probability because it is not "guessing" that amino acid (since it is the actual sequence).
+Here, the branch amino acid reconstructions are shown for each branch and terminal node. The branch numbering is based on the input tree and you can find a newick tree with the branch labels at the beginning of the ```rst``` file that you can extract and view very easily in a program like TreeView or FigTree. Below the branch label are the amino acid positions, followed by the amino acid, its posterior probability and conversion to the next amino acid. If it is a terminal branch, the amino acid will not have a posterior probability because it is not "guessing" that amino acid (since it is the actual sequence).
 
 In the figure above, we see that branch 34 (nodes 55 to 56) have several amino acid reconstructions that have posterior probablities all above 80%. However, we are only interested in the codon positions that were identified to be under positive selection according to M8, FUBAR, and CmC models.
 
