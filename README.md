@@ -11,7 +11,7 @@ Authors:
 
 Acknowledgements:
 * [Erik Spence](https://www.linkedin.com/in/erik-spence-25229a31/?originalSubdomain=ca): for help with creation of scripts and optimizing performance on Niagara cluster
-* [SciNet](https://www.scinethpc.ca/) - Computations were performed on the [Niagara]() supercomputer at the SciNet HPC Consortium.
+* [SciNet](https://www.scinethpc.ca/) - Computations were performed on the [Niagara](https://docs.scinet.utoronto.ca/index.php/Niagara_Quickstart) supercomputer at the SciNet HPC Consortium.
     * [Marcelo Ponce et. al (2019). Deploying a Top-100 Supercomputer for Large Parallel Workloads: The Niagara Supercomputer PEARC'19 Proceedings](https://dl.acm.org/doi/10.1145/3332186.3332195)
     * [Chris Loken et al. (2010). SciNet: Lessons learned from Building a Power-efficient Top-20 System and Data Centre. J. Phys. Conf. Ser.](https://iopscience.iop.org/article/10.1088/1742-6596/256/1/012026)
 * [Lovejoy Lab](http://www.utsc.utoronto.ca/~lovejoy/) - For help with additional computations on the Lovejoy server
