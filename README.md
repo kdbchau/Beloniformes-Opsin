@@ -163,7 +163,7 @@ Merging is done with [merge_seqs.py](https://github.com/kdbchau/Beloniformes/blo
 python merge_seqs.py round1_MSA round3_MSA # where the second MSA called is the most up-to-date OR most complete (fewest gaps)
 ```
 
-After this, we will have our opsin MSAs to work with. But despite all this read mapping and refining, there are still regions in the MSA that are very gapped or have premature stop codons and need to be removed for effective codeml analysis.
+After this, we will have our opsin MSAs to work with. But despite all this read mapping and refining, there are still regions in the MSA that are very gapped or have premature stop codons and need to be removed for effective codeml analysis. Jump to [__section 7__](#7-cleaning-multiple-sequence-alignments) for MSA cleanup.
 
 # 4. Phylogeny Reconstruction [Gene Trees]
 
