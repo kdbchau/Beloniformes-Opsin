@@ -2,7 +2,7 @@
 This pipeline focuses on the extraction of cone opsin sequences from whole exome sequence data of fishes. It will also focus on multiple sequence alignment using both reference and makeshift reference sequences, cleaning up the multiple sequence alignments, and testing for changes in selection patterns with CODEML from the PAML program. Additional scripts and software are shown for phylogeny reconstruction and ancestral amino acid reconstruction.
 
 Authors:
-* Katherine D. Chau (me)
+* [Katherine D. Chau (me)](https://www.linkedin.com/in/balasink/)
 * [Frances E. Hauser](https://fehauser.wordpress.com/)
 * [Jacob M. Daane](https://www.daanelab.org/)
 * [Matthew P. Harris](http://www.fishbonelab.org/harris/Home.html)
