@@ -354,7 +354,7 @@ iqtree -s lwsa_msa_1030.fa -st NT2AA -m TEST -AIC -nt 1  #
 
 This will produce a log file output that will show testing for all the models. At the bottom there will be several output for different algorithms deciding the best amino acid model. We use AIC.
 
-Here were the best models for each opsin. Based on this, we need to specifiy the approprate dat file in the codeml.ctl file for ancestral amino acid reconstruction. Here is an example of a codeml.ctl file for [amino acid reconstruction]() and changing ```aaRatefile``` variable to call the appropriate amino acid model saved in the codeml bin folder.
+Here were the best models for each opsin. Based on this, we need to specifiy the approprate dat file in the codeml.ctl file for ancestral amino acid reconstruction. Here is an example of a codeml.ctl file for [amino acid reconstruction](https://github.com/kdbchau/Beloniformes-Opsins/blob/main/Downloadables/lwsa_aa_codeml.ctl) and changing ```aaRatefile``` variable to call the appropriate amino acid model saved in the codeml bin folder.
 
 |Opsin|AIC Model| aaRatefile .dat file|
 |---|---|---|
