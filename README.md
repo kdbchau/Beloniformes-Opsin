@@ -1,5 +1,5 @@
 # Multiple Ecological Axes Drive Cone Opsin Evolution in Beloniformes
-This pipeline focuses on the extraction of cone opsin sequences from whole exome sequence data of fishes. It will also focus on multiple sequence alignment using both reference and makeshift reference sequences, cleaning up the multiple sequence alignments, and testing for changes in selection patterns with CODEML from the PAML program. Additional scripts and software are shown for phylogeny reconstruction and ancestral amino acid reconstruction.
+This pipeline focuses on the extraction of cone opsin sequences from whole exome sequence data of fishes. It will also focus on multiple sequence alignment using both reference and makeshift reference sequences, cleaning up the multiple sequence alignments, and testing for changes in selection patterns with CODEML from the PAML program. Additional scripts and software are shown for phylogeny reconstruction and ancestral amino acid reconstruction. Please see our [manuscript]() for the project.
 
 Authors:
 * [Katherine D. Chau (me)](https://www.linkedin.com/in/balasink/)
@@ -227,7 +227,7 @@ and the [maximum likelihood cone opsin tree](https://github.com/kdbchau/Belonifo
 # 5. Ancestral Habitat and Diet Reconstruction [BEAST]
 
 To best determine when marine to freshwater transitions occurred within the Beloniformes, using a larger tree is best for ancestral habitat reconstruction.
-[Bloom & Lovejoy 2017](https://devinbloom.files.wordpress.com/2017/08/bloom-lovejoy-2017-jbiogeography.pdf) had constructed a phylogeny for 104 beloniforms and 7 outgroup species using RAG1, RAG2, TMO-4C4, and CYTB genes. We obtained these sequences and I included TMO-4C4 for _Hemiramphodon pogonognathus_, and all four genes for _Rhynchorhamphus georgii_ and _Cheilopogon papilio_ which were missing. Our tree totalled 120 beloniforms and 7 outgroups.
+[Bloom & Lovejoy 2017](https://devinbloom.files.wordpress.com/2017/08/bloom-lovejoy-2017-jbiogeography.pdf) had constructed a phylogeny for 104 beloniforms and 7 outgroup species using RAG1, RAG2, TMO-4C4, and CYTB genes. We obtained these sequences (plus a few additional beloniforms not from the paper) and I included TMO-4C4 for _Hemiramphodon pogonognathus_, and all four genes for _Rhynchorhamphus georgii_ and _Cheilopogon papilio_ which were missing. Our tree totalled 120 beloniforms and 7 outgroups.
 
 I followed the procedure for a maximum credibility phylogeny reconstruction using BEAST according to Bloom & Lovejoy 2017 paper, using the descriptions given in their supporting information.
 
