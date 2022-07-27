@@ -256,9 +256,6 @@ For a higher resolution download image [here](https://github.com/kdbchau/Belonif
 
 Using the pruned tree and literature research, reconstructing diet was easier as we based it off each family. Needlefishes are primarily piscivorous (except for _Belonion dibranchodon_ and _Potamorrhaphis guianensis_), flyingfishes and sauries feed on zooplankton, halfbeaks are herbivorous feeding on plants and algae. Medakas, viviparous halfbeaks, and the two non-piscivorous needlefishes feed on insects, algae or other small taxa like zooplankton, so they are classified as generalists. 
 
-Below is the figure showing both habitat and diet transitions for the 38 Beloniformes.
-![diet and habitat beloniformes](https://github.com/kdbchau/Beloniformes/blob/main/Images/Partitions_Clean_3Diet.jpg)
-
 # 6. Species Tree
 To generate a species tree for the 38 beloniforms, we had obtained an alignment from the whole exome sequencing data that encompassed single-copy exons >100bp, with at least 85% coverage in all species, concatenated. The total length of the alignment was 1,579,692 bases encompassing 8,768 exons. This alignment included the freshwater medaka but did not include the marine medaka. Because marine medaka is most closely related to the freshwater medaka, this was easy to manually add in as an outgroup.
 
