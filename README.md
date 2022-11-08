@@ -143,7 +143,7 @@ name="rh2a_medaka_MSA" && python ideal_species.py ${name}.fa > ${name}.txt && ca
 
 A textfile will be created with the species in the first column, sorted by the number of codons in the second column. Medakas are usually always the first two, followed by the beloniform with the next most complete sequence. Then using that beloniform's sequence, manually fill in its gaps with either the medaka sequence or a different nucleotide/amino acid from another beloniform. Typically this is the best approach, as refilling in the gaps with medaka bases doesn't pull out more information. Rather, fill it with bases from the seccond most complete beloniform, or in some cases, if a paritcular family (e.g. all the flyingfishes) are missing codons in an area, fill the gaps with their bases to try and pull out more of their sequences in the next round mapping.
 
-In my study, this is how many round mappings were needed to obtain opsin MSAs that were fairly complete:
+In my study, this is how many additional round mappings were needed to obtain opsin MSAs that were fairly complete (this ignores the first reference round):
 
 | Opsin | # of rounds | Round 1 reference species|
 | --- | --- | --- |
