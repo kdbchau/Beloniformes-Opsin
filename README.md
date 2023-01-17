@@ -39,10 +39,10 @@ Acknowledgements:
 # 1. Install Software
 Software with a * next to the name were already available in the Niagara cluster from Compute Canada. PAML was run on the Lovejoy server.
 
-1. [__FastQC*__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (version 0.11.8)
-2. [__Trimmomatic*__](http://www.usadellab.org/cms/?page=trimmomatic) (version 0.38)
-3. [__BWA*__](http://bio-bwa.sourceforge.net/) (version 0.7.17)
-4. [__SAMtools*__](http://www.htslib.org/) (version 1.9)
+1. [__FastQC__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (version 0.11.8) *
+2. [__Trimmomatic__](http://www.usadellab.org/cms/?page=trimmomatic) (version 0.38) *
+3. [__BWA__](http://bio-bwa.sourceforge.net/) (version 0.7.17) *
+4. [__SAMtools__](http://www.htslib.org/) (version 1.9) *
 5. [__IQTree__](http://www.iqtree.org/) (version 1.6.0)
 6. [__MrBayes__](http://nbisweden.github.io/MrBayes/) (version 3.2.6)
 7. [__BEAST__](https://beast.community/) (version 1.8.4)
