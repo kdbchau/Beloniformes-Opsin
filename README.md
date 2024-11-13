@@ -1,5 +1,5 @@
 # Multiple Ecological Axes Drive Cone Opsin Evolution in Beloniformes
-This pipeline focuses on the extraction of cone opsin sequences from whole exome sequence data of fishes. It will also focus on multiple sequence alignment using both reference and makeshift reference sequences, cleaning up the multiple sequence alignments, and testing for changes in selection patterns with CODEML from the PAML program. Additional scripts and software are shown for phylogeny reconstruction and ancestral amino acid reconstruction. Please see our [manuscript]() for the project.
+This pipeline focuses on the extraction of cone opsin sequences from whole exome sequence data of fishes. It will also focus on multiple sequence alignment using both reference and makeshift reference sequences, cleaning up the multiple sequence alignments, and testing for changes in selection patterns with CODEML from the PAML program. Additional scripts and software are shown for phylogeny reconstruction and ancestral amino acid reconstruction. Please see our [paper](https://pubmed.ncbi.nlm.nih.gov/38416218/) for the project.
 
 Authors:
 * [Katherine D. Chau (me)](https://www.linkedin.com/in/balasink/)
@@ -384,4 +384,4 @@ This is compared against FUBAR output which is downloaded off the server. Finall
 Those sites are focused on the ancestral amino acid reconstructions. For example if I know that codon at position 217 is under positive selection, in the figure above I see that codon 217 (branch 34) transitioned from V to A and I can mark that on a tree. I can find all instances where amino acid 217 shows up in this output and see how the amino acids evolved along the branches.
 
 ### Thank you!
-For the full analyis and results of this project see our [paper]().
+For the full analyis and results of this project see our [paper](https://pubmed.ncbi.nlm.nih.gov/38416218/).
