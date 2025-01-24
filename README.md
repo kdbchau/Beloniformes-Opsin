@@ -3,7 +3,7 @@ This pipeline focuses on the extraction of cone opsin sequences from whole exome
 
 Authors:
 * [Katherine D. Chau (me)](https://www.linkedin.com/in/balasink/)
-* [Frances E. Hauser](https://fehauser.wordpress.com/)
+* [Frances E. Hauser](https://scholar.google.ca/citations?user=lVneCTkAAAAJ&hl=en)
 * [Alexander van Nynatten](https://scholar.google.ca/citations?user=_p_qt40AAAAJ&hl=en)
 * [Jacob M. Daane](https://www.daanelab.org/)
 * [Matthew P. Harris](http://www.fishbonelab.org/harris/Home.html)
