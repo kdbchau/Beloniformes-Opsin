@@ -6,7 +6,7 @@ Authors:
 * [Frances E. Hauser](https://scholar.google.ca/citations?user=lVneCTkAAAAJ&hl=en)
 * [Alexander van Nynatten](https://scholar.google.ca/citations?user=_p_qt40AAAAJ&hl=en)
 * [Jacob M. Daane](https://www.daanelab.org/)
-* [Matthew P. Harris](http://www.fishbonelab.org/harris/Home.html)
+* [Matthew P. Harris](https://genetics.hms.harvard.edu/faculty-staff/matthew-harris)
 * [Belinda S. W. Chang](https://chang.eeb.utoronto.ca/lab-members/belinda/)
 * [Nathan R. Lovejoy](https://scholar.google.ca/citations?user=kAzTYTsAAAAJ&hl=en)
 
